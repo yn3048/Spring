@@ -11,6 +11,7 @@ public class Computer {
     @Autowired
     private Cpu cpu;
 
+
     // 생성자 주입
     private Ram ram;
 
