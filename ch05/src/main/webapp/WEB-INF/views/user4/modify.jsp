@@ -1,7 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
-<script>
-    document.querySelector('input[name="gender"]:checked').value;
-</script>
 
 <html>
 <head>
@@ -24,8 +21,8 @@
         <tr>
             <td>성별</td>
             <td>
-                <label><input type="radio" name="gender" value="${user4DTO.gender}">F</label>
-                <label><input type="radio" name="gender" value="${user4DTO.gender}">M</label>
+                <label><input type="radio" name="gender" value="F" ${user4DTO.gender == 'F' ? 'checked' : ''}>여자</label>
+                <label><input type="radio" name="gender" value="M" ${user4DTO.gender == 'M' ? 'checked' : ''}>남자</label>
             </td>
         </tr>
         <tr>

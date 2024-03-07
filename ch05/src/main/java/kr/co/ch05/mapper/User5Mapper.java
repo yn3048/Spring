@@ -13,3 +13,22 @@ public interface User5Mapper {
     public void updateUser5(User5DTO user5DTO);
     public void deleteUser5(String seq);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

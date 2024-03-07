@@ -1,16 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
-<script>
-    document.querySelector('input[name="gender"]:checked').value;
-</script>
-
 <html>
 <head>
     <title>user5::modify</title>
 </head>
 <body>
 <h3>user5 수정</h3>
-<a href="/ch05">메인</a>
-<a href="/ch05/user5/list">목록</a>
+    <a href="/ch05">메인</a>
+    <a href="/ch05/user5/list">목록</a>
 <form action="/ch05/user5/modify" method="post">
     <table border="1">
         <tr>
@@ -24,8 +20,8 @@
         <tr>
             <td>성별</td>
             <td>
-                <label><input type="radio" name="gender" value="F">여자</label>
-                <label><input type="radio" name="gender" value="M">남자</label>
+                <label><input type="radio" name="gender" value="F" ${user5DTO.gender == 'F' ? 'checked' : ''}>여자</label>
+                <label><input type="radio" name="gender" value="M" ${user5DTO.gender == 'M' ? 'checked' : ''}>남자</label>
             </td>
         </tr>
         <tr>
