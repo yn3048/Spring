@@ -18,6 +18,7 @@ public class JdbcConfig {
         dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/studydb");
         dataSource.setUsername("dpsk3048");
         dataSource.setPassword("abc1234");
+        // new password : Abcd!1234
 
         // DBCP2 옵션 설정
         dataSource.setMaxTotal(13); //  최대 연결 풀 크기 설정

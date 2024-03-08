@@ -15,9 +15,7 @@
       <change beforePath="$PROJECT_DIR$/../ch04/src/main/webapp/WEB-INF/views/user5/modify.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../ch04/src/main/webapp/WEB-INF/views/user5/modify.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ch04/src/main/webapp/WEB-INF/views/user5/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../ch04/src/main/webapp/WEB-INF/views/user5/register.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/ch05/mapper/User5Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/ch05/mapper/User5Mapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user4/modify.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user4/modify.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user5/modify.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user5/modify.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/co/ch05/config/JdbcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/co/ch05/config/JdbcConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,13 +55,16 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.ch05 [clean].executor": "Run",
+    "Maven.ch05 [install].executor": "Run",
+    "Maven.ch05 [package].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Tomcat Server.ch05.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/java/Desktop/workspace/Spring/ch05",
+    "last_opened_file_path": "C:/Users/java/Desktop/workspace/Spring/ch04",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -211,6 +212,10 @@
       <workItem from="1709795923681" duration="58000" />
       <workItem from="1709795986558" duration="11000" />
       <workItem from="1709796341024" duration="4848000" />
+      <workItem from="1709879541055" duration="4486000" />
+      <workItem from="1709884747085" duration="2409000" />
+      <workItem from="1709891856818" duration="2166000" />
+      <workItem from="1709894057186" duration="510000" />
     </task>
     <servers />
   </component>
