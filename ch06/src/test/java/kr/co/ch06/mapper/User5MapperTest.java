@@ -21,11 +21,12 @@ class User5MapperTest {
     @Test
     @DisplayName("user5 등록")
     void insertUser5() {
-        log.debug("insertUser5...");
+        log.info("insertUser5...");
         // 테스트 코드 패턴 : given - when - then
 
         // given : 테스트를 실행할 준비 단계
         User5DTO user5DTO = User5DTO.builder()
+                //.seq(20)
                 .name("이길동")
                 .gender("F")
                 .age(22)
