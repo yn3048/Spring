@@ -5,6 +5,7 @@ import kr.co.ch07.dto.User4DTO;
 import kr.co.ch07.dto.User5DTO;
 import lombok.*;
 
+@Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -15,6 +16,7 @@ import lombok.*;
 public class User5 {
 
     @Id                 //pk 컬럼 설정
+    @Column(name = "seq", nullable = false, unique = true)
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto_Increment
     private int seq;
     private String name;

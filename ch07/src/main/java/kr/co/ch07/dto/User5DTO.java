@@ -7,22 +7,22 @@ import lombok.Data;
 @Data
 @Builder
 public class User5DTO {
-
-    private int seq;
+    private Integer seq;
     private String name;
     private String gender;
     private int age;
     private String addr;
 
-    // Entity 변환 메서드
-    public User5 toEntity(){
-        return User5.builder()
-                        //.seq(seq)
-                        .name(name)
-                        .gender(gender)
-                        .age(age)
-                        .addr(addr)
-                        .build();
+    public User5 toEntity() {
+        User5 user5 = new User5();
+        // seq 필드가 null이 아닌 경우에만 값을 설정
+        if (this.seq != null) {
+            user5.setSeq(this.seq);
+        }
+        user5.setName(this.name);
+        user5.setGender(this.gender);
+        user5.setAge(this.age);
+        user5.setAddr(this.addr);
+        return user5;
     }
-
 }
