@@ -22,11 +22,13 @@ public class User2Controller {
 
     @GetMapping("/user2")
     public ResponseEntity<List<User2DTO>> list(){
+
         return user2Service.selectUser2s();
     }
 
     @GetMapping("/user2/{uid}")
     public ResponseEntity<?> user2(@PathVariable("uid") String uid){
+
         return user2Service.selectUser2(uid);
     }
 
@@ -37,11 +39,13 @@ public class User2Controller {
 
     @PutMapping("/user2")
     public ResponseEntity<?> modify(@RequestBody User2DTO user2DTO){
+
         return user2Service.updateUser2(user2DTO);
     }
 
     @DeleteMapping("/user2/{uid}")
     public ResponseEntity<?> delete(@PathVariable("uid") String uid){
+
         return user2Service.deleteUser2(uid);
     }
 

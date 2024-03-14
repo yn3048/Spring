@@ -68,6 +68,9 @@ public class User2Service {
                         .name(entity.getName())
                         .birth(entity.getBirth())
                         .addr(entity.getAddr())
+                        .age(entity.getAge())
+                        .email(entity.getEmail())
+                        .hp(entity.getHp())
                         .build())
                 .toList();
 

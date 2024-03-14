@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>user2::list</title>
+    <title>user4::list</title>
     <script>
 
         window.onload = function (){
@@ -8,7 +8,7 @@
             const table = document.getElementsByTagName('table')[0];
 
             // 목록 조회
-            fetch("/ch09/user2")
+            fetch("/ch09/user4")
                 .then(response => response.json())
                 .then(data => {
                     console.log(data);
@@ -18,11 +18,10 @@
                         const tr = `<tr>
                                         <td>${user.uid}</td>
                                         <td>${user.name}</td>
-                                        <td>${user.birth}</td>
-                                        <td>${user.addr}</td>
+                                        <td>${user.gender}</td>
                                         <td>${user.age}</td>
-                                        <td>${user.email}</td>
                                         <td>${user.hp}</td>
+                                        <td>${user.addr}</td>
                                         <td>
                                           <a href="#" class="modify" data-uid="${user.uid}">수정</a>
                                           <a href="#" class="delete" data-uid="${user.uid}">삭제</a>
@@ -42,13 +41,13 @@
                     // 수정
                     const uid = e.target.dataset.uid;
                     // 수정화면 이동
-                    location.href = `/ch09/user2/modify?uid=${uid}`;
+                    location.href = `/ch09/user4/modify?uid=${uid}`;
                 }else if(e.target.classList == 'delete'){
                     // 삭제
                     const tr = e.target.closest('tr');
                     const uid = e.target.dataset.uid;
 
-                    fetch(`/ch09/user2/${uid}`, {
+                    fetch(`/ch09/user4/${uid}`, {
                         method : 'DELETE'
                     })
                         .then(response => response.json())
@@ -72,20 +71,19 @@
 </head>
 <body>
 
-<h3>user2 목록</h3>
+<h3>user4 목록</h3>
 
 <a th:href="@{/}">메인</a>
-<a th:href="@{/user2/register}">등록</a>
+<a th:href="@{/user4/register}">등록</a>
 
 <table border="1">
     <tr>
         <th>아이디</th>
         <th>이름</th>
-        <th>생년월일</th>
-        <th>주소</th>
+        <th>성별</th>
         <th>나이</th>
-        <th>이메일</th>
         <th>휴대폰</th>
+        <th>주소</th>
         <th>관리</th>
     </tr>
 </table>

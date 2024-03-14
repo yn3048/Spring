@@ -1,9 +1,9 @@
 <html>
 <head>
-    <title>user2::register</title>
+    <title>user4::register</title>
     <script>
         window.onload = function (){
-            const form = document.formUser2;
+            const form = document.formUser4;
 
             form.onsubmit = function (e){
                 e.preventDefault();
@@ -11,23 +11,21 @@
 
                 const uid = form.uid.value;
                 const name = form.name.value;
-                const birth = form.birth.value;
+                const gender = form.gender.value;
                 const age = form.age.value;
                 const addr = form.addr.value;
-                const email = form.email.value;
                 const hp = form.hp.value;
 
                 const jsonData = {
                     "uid" : uid,
                     "name" : name,
-                    "birth" : birth,
+                    "gender" : gender,
                     "age" : age,
                     "addr" : addr,
-                    "email" : email,
                     "hp" : hp
                 }
 
-                fetch('/ch09/user2', {
+                fetch('/ch09/user4', {
                     method : 'POST',
                     headers : {'Content-Type' : 'application/json'},
                     body : JSON.stringify(jsonData)
@@ -45,10 +43,10 @@
 </head>
 
 <body>
-    <h3>user2 등록</h3>
+    <h3>user4 등록</h3>
     <a th:href="@{/}">메인</a>
-    <a th:href="@{/user2/list}">목록</a>
-    <form name="formUser2" method="post">
+    <a th:href="@{/user4/list}">목록</a>
+    <form name="formUser4" method="post">
         <table border="1">
             <tr>
                 <td>아이디</td>
@@ -59,24 +57,23 @@
                 <td><input type="text" name="name"></td>
             </tr>
             <tr>
-                <td>생년월일</td>
-                <td><input type="date" name="birth"></td>
-            </tr>
-            <tr>
-                <td>주소</td>
-                <td><input type="text" name="addr"></td>
+                <td>성별</td>
+                <td>
+                    <label><input type="radio" name="gender" value="F">여자</label>
+                    <label><input type="radio" name="gender" value="M">남자</label>
+                </td>
             </tr>
             <tr>
                 <td>나이</td>
-                <td><input type="number" name="age"></td>
-            </tr>
-            <tr>
-                <td>이메일</td>
-                <td><input type="email" name="email"></td>
+                <td><input type="number" name="age" min="0"></td>
             </tr>
             <tr>
                 <td>휴대폰</td>
                 <td><input type="text" name="hp"></td>
+            </tr>
+            <tr>
+                <td>주소</td>
+                <td><input type="text" name="addr"></td>
             </tr>
             <tr>
                 <td colspan="2" align="right"><input type="submit" value="등록"></td>

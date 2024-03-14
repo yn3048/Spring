@@ -1,9 +1,9 @@
 <html>
 <head>
-    <title>user2::register</title>
+    <title>user3::register</title>
     <script>
         window.onload = function (){
-            const form = document.formUser2;
+            const form = document.formUser3;
 
             form.onsubmit = function (e){
                 e.preventDefault();
@@ -12,22 +12,18 @@
                 const uid = form.uid.value;
                 const name = form.name.value;
                 const birth = form.birth.value;
-                const age = form.age.value;
                 const addr = form.addr.value;
-                const email = form.email.value;
                 const hp = form.hp.value;
 
                 const jsonData = {
                     "uid" : uid,
                     "name" : name,
                     "birth" : birth,
-                    "age" : age,
                     "addr" : addr,
-                    "email" : email,
                     "hp" : hp
                 }
 
-                fetch('/ch09/user2', {
+                fetch('/ch09/user3', {
                     method : 'POST',
                     headers : {'Content-Type' : 'application/json'},
                     body : JSON.stringify(jsonData)
@@ -45,10 +41,10 @@
 </head>
 
 <body>
-    <h3>user2 등록</h3>
+    <h3>user3 등록</h3>
     <a th:href="@{/}">메인</a>
-    <a th:href="@{/user2/list}">목록</a>
-    <form name="formUser2" method="post">
+    <a th:href="@{/user3/list}">목록</a>
+    <form name="formUser3" method="post">
         <table border="1">
             <tr>
                 <td>아이디</td>
@@ -65,14 +61,6 @@
             <tr>
                 <td>주소</td>
                 <td><input type="text" name="addr"></td>
-            </tr>
-            <tr>
-                <td>나이</td>
-                <td><input type="number" name="age"></td>
-            </tr>
-            <tr>
-                <td>이메일</td>
-                <td><input type="email" name="email"></td>
             </tr>
             <tr>
                 <td>휴대폰</td>

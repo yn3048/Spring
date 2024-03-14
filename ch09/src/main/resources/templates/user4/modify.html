@@ -1,10 +1,10 @@
 <html>
     <head>
-        <title>user2::modify</title>
+        <title>user4::modify</title>
 
         <script>
             window.onload = function (){
-                const form = document.formUser2;
+                const form = document.formUser4;
 
                 // 현재 url 파라미터 값 가져오기
                 const url = location.href;
@@ -12,15 +12,14 @@
                 const uid = param.split('?')[1];
 
                 // 수정 데이터 요청
-                fetch(`/ch09/user2/${uid}`)
+                fetch(`/ch09/user4/${uid}`)
                     .then(response => response.json())
                     .then(data => {
                         form.uid.value = data.uid;
                         form.name.value = data.name;
-                        form.birth.value = data.birth;
-                        form.addr.value = data.addr;
+                        form.gender.value = data.gender;
                         form.age.value = data.age;
-                        form.email.value = data.email;
+                        form.addr.value = data.addr;
                         form.hp.value = data.hp;
                     })
                     .catch((err => {
@@ -33,14 +32,13 @@
                     const jsonData = {
                         "uid" : form.uid.value,
                         "name" : form.name.value,
-                        "birth" : form.birth.value,
-                        "addr" : form.addr.value,
+                        "gender" : form.gender.value,
                         "age" : form.age.value,
-                        "email" : form.email.value,
+                        "addr" : form.addr.value,
                         "hp" : form.hp.value
                     }
 
-                    fetch(`/ch09/user2`, {
+                    fetch(`/ch09/user4`, {
                         method : 'PUT',
                         headers : {'Context-Type' : 'application/json'},
                         body : JSON.stringify(jsonData)
@@ -59,41 +57,40 @@
     </head>
 
     <body>
-    <h3>user2 수정</h3>
+    <h3>user4 수정</h3>
     <a th:href="@{/}">메인</a>
-    <a th:href="@{/user2/list}">목록</a>
-    <form name="formUser2" method="post">
+    <a th:href="@{/user4/list}">목록</a>
+    <form name="formUser4" method="post">
         <table border="1">
             <tr>
                 <td>아이디</td>
-                <td><input type="text" name="uid" readonly></td>
+                <td><input type="text" name="uid"></td>
             </tr>
             <tr>
                 <td>이름</td>
                 <td><input type="text" name="name"></td>
             </tr>
             <tr>
-                <td>생년월일</td>
-                <td><input type="date" name="birth"></td>
-            </tr>
-            <tr>
-                <td>주소</td>
-                <td><input type="text" name="addr"></td>
+                <td>성별</td>
+                <td>
+                    <label><input type="radio" name="gender" value="F">여자</label>
+                    <label><input type="radio" name="gender" value="M">남자</label>
+                </td>
             </tr>
             <tr>
                 <td>나이</td>
-                <td><input type="number" name="age"></td>
-            </tr>
-            <tr>
-                <td>이메일</td>
-                <td><input type="email" name="email"></td>
+                <td><input type="number" name="age" min="0"></td>
             </tr>
             <tr>
                 <td>휴대폰</td>
                 <td><input type="text" name="hp"></td>
             </tr>
             <tr>
-                <td colspan="2" align="right"><input type="submit" value="수정"></td>
+                <td>주소</td>
+                <td><input type="text" name="addr"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right"><input type="submit" value="등록"></td>
             </tr>
         </table>
 

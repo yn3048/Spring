@@ -1,10 +1,10 @@
 <html>
     <head>
-        <title>user2::modify</title>
+        <title>user3::modify</title>
 
         <script>
             window.onload = function (){
-                const form = document.formUser2;
+                const form = document.formUser3;
 
                 // 현재 url 파라미터 값 가져오기
                 const url = location.href;
@@ -12,15 +12,13 @@
                 const uid = param.split('?')[1];
 
                 // 수정 데이터 요청
-                fetch(`/ch09/user2/${uid}`)
+                fetch(`/ch09/user3/${uid}`)
                     .then(response => response.json())
                     .then(data => {
                         form.uid.value = data.uid;
                         form.name.value = data.name;
                         form.birth.value = data.birth;
                         form.addr.value = data.addr;
-                        form.age.value = data.age;
-                        form.email.value = data.email;
                         form.hp.value = data.hp;
                     })
                     .catch((err => {
@@ -35,12 +33,10 @@
                         "name" : form.name.value,
                         "birth" : form.birth.value,
                         "addr" : form.addr.value,
-                        "age" : form.age.value,
-                        "email" : form.email.value,
                         "hp" : form.hp.value
                     }
 
-                    fetch(`/ch09/user2`, {
+                    fetch(`/ch09/user3`, {
                         method : 'PUT',
                         headers : {'Context-Type' : 'application/json'},
                         body : JSON.stringify(jsonData)
@@ -59,10 +55,10 @@
     </head>
 
     <body>
-    <h3>user2 수정</h3>
+    <h3>user3 수정</h3>
     <a th:href="@{/}">메인</a>
-    <a th:href="@{/user2/list}">목록</a>
-    <form name="formUser2" method="post">
+    <a th:href="@{/user3/list}">목록</a>
+    <form name="formUser3" method="post">
         <table border="1">
             <tr>
                 <td>아이디</td>
@@ -79,14 +75,6 @@
             <tr>
                 <td>주소</td>
                 <td><input type="text" name="addr"></td>
-            </tr>
-            <tr>
-                <td>나이</td>
-                <td><input type="number" name="age"></td>
-            </tr>
-            <tr>
-                <td>이메일</td>
-                <td><input type="email" name="email"></td>
             </tr>
             <tr>
                 <td>휴대폰</td>
