@@ -31,6 +31,71 @@ public class MainController {
         return "/user1/modify";
     }
 
+
+    @GetMapping("/user2/list")
+    public String user2list(){
+        return "/user2/list";
+    }
+
+    @GetMapping("/user2/register")
+    public String user2Register(){
+        return "/user2/register";
+    }
+
+    @GetMapping("/user2/modify")
+    public String user2modify(){
+        return "/user2/modify";
+    }
+
+
+    @GetMapping("/user3/list")
+    public String user3list(){
+        return "/user3/list";
+    }
+
+    @GetMapping("/user3/register")
+    public String user3Register(){
+        return "/user3/register";
+    }
+
+    @GetMapping("/user3/modify")
+    public String user3Modify(){
+        return "/user3/modify";
+    }
+
+
+    @GetMapping("/user4/list")
+    public String user4list(){
+        return "/user4/list";
+    }
+
+    @GetMapping("/user4/register")
+    public String user4Register(){
+        return "/user4/register";
+    }
+
+    @GetMapping("/user4/modify")
+    public String user4Modify(){
+        return "/user4/modify";
+    }
+
+
+    @GetMapping("/user5/list")
+    public String user5list(){
+        return "/user5/list";
+    }
+
+    @GetMapping("/user5/register")
+    public String user5Register(){
+        return "/user5/register";
+    }
+
+    @GetMapping("/user5/modify")
+    public String user5Modify(){
+        return "/user5/modify";
+    }
+
+
 }
 
 

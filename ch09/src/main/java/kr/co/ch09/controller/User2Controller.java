@@ -1,7 +1,6 @@
 package kr.co.ch09.controller;
 
 import jakarta.validation.Valid;
-import kr.co.ch09.dto.User1DTO;
 import kr.co.ch09.dto.User2DTO;
 import kr.co.ch09.service.User2Service;
 import lombok.RequiredArgsConstructor;
