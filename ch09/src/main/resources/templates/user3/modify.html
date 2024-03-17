@@ -9,17 +9,21 @@
                 // 현재 url 파라미터 값 가져오기
                 const url = location.href;
                 const param = url.split('?')[1];
-                const uid = param.split('?')[1];
-
+                const uid = param.split('=')[1];
+                console.log(url)
+                console.log(param)
+                console.log(uid)
                 // 수정 데이터 요청
                 fetch(`/ch09/user3/${uid}`)
                     .then(response => response.json())
                     .then(data => {
+                        console.log(data)
                         form.uid.value = data.uid;
                         form.name.value = data.name;
                         form.birth.value = data.birth;
                         form.addr.value = data.addr;
                         form.hp.value = data.hp;
+
                     })
                     .catch((err => {
                         console.log(err);
@@ -38,7 +42,7 @@
 
                     fetch(`/ch09/user3`, {
                         method : 'PUT',
-                        headers : {'Context-Type' : 'application/json'},
+                        headers : {'Content-Type' : 'application/json'},
                         body : JSON.stringify(jsonData)
                     })
                         .then(response => response.json())
