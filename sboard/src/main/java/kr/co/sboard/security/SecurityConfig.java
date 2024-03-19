@@ -19,7 +19,7 @@ public class SecurityConfig {
         httpSecurity.formLogin(login -> login
                 .loginPage("/user/login")
                 .defaultSuccessUrl("/user/success")
-                .failureUrl("/user/login/?success=100")
+                .failureUrl("/user/login?success=100")
                 .usernameParameter("uid")
                 .passwordParameter("pass")
         );
@@ -28,19 +28,13 @@ public class SecurityConfig {
         // 로그아웃 설정
         httpSecurity.logout(logout -> logout
                 .invalidateHttpSession(true) // 로그아웃시 현재 세션 무효화
-                // 로그아웃 처리할 url 패턴지정, url패턴을 사용하여 요청 매치
-                .logoutRequestMatcher(new AntPathRequestMatcher("/templates/user/logout"))
                 .logoutRequestMatcher(new AntPathRequestMatcher("/user/logout"))
-                // 로그아웃 성공후 사용자를 리다이렉션할 url 설정
-                .logoutSuccessUrl("/templates/user/login?success=200")
-                .logoutSuccessUrl("/user/login?success=200"));
+                .logoutSuccessUrl("/user/login?success=300"));
 
         // 인가(권한) 설정
         httpSecurity.authorizeHttpRequests(authorize -> authorize
-                .requestMatchers("/").permitAll()// 루트 경로에 대한 모든 요청 허용
-                // "/admin/"으로 시작하는 모든 요청에 대해 admin 권한이 있는 사용자만 접근 허용
+                .requestMatchers("/").authenticated()
                 .requestMatchers("/admin/**").hasAnyAuthority("ADMIN")
-                // "/manager/"로 시작하는 모든 요청에 대해 admin 또는 manager 권한이 있는 사용자만 접근 허용
                 .requestMatchers("/manager/**").hasAnyAuthority("ADMIN","MANAGER")
                 // 존재하지 않는 페이지에 404 에러 띄우고, 존재하는 페이지는 모든 접근 허용!
                 .anyRequest().permitAll());
