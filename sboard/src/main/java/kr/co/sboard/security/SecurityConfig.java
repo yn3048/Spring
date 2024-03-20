@@ -18,7 +18,7 @@ public class SecurityConfig {
         // 인증 설정(로그인)
         httpSecurity.formLogin(login -> login
                 .loginPage("/user/login")
-                .defaultSuccessUrl("/user/success")
+                .defaultSuccessUrl("/")
                 .failureUrl("/user/login?success=100")
                 .usernameParameter("uid")
                 .passwordParameter("pass")
@@ -33,7 +33,7 @@ public class SecurityConfig {
 
         // 인가(권한) 설정
         httpSecurity.authorizeHttpRequests(authorize -> authorize
-                .requestMatchers("/").authenticated()
+                .requestMatchers("/").permitAll()
                 .requestMatchers("/admin/**").hasAnyAuthority("ADMIN")
                 .requestMatchers("/manager/**").hasAnyAuthority("ADMIN","MANAGER")
                 // 존재하지 않는 페이지에 404 에러 띄우고, 존재하는 페이지는 모든 접근 허용!
