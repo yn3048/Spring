@@ -34,6 +34,6 @@ public class ArticleDTO {
     private UserDTO user;
     private List<MultipartFile> files;
 
-    private List<File> fileList;
+    private List<FileDTO> fileList;
 
 }

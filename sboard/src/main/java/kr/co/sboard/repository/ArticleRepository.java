@@ -18,6 +18,9 @@ public interface ArticleRepository extends JpaRepository<Article, Integer> {
     */
     public Page<Article> findByParentAndCate(int parent, String cate, Pageable pageable);
 
+    public List<Article> findByParent(int parent);
+
+
 
 }
 

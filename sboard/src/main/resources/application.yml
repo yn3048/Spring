@@ -67,3 +67,8 @@ spring:
 file:
     upload:
         path: uploads/
+        
+        
+# 서버 자동 재시작 끄기
+restart:
+    enabled: false
