@@ -2860,6 +2860,9 @@ textarea.form-control-lg {
   opacity: var(--bs-btn-disabled-opacity);
 }
 
+
+
+
 .btn-primary {
   --bs-btn-color: #fff;
   --bs-btn-bg: #0d6efd;
@@ -6673,7 +6676,7 @@ textarea.form-control-lg {
 
 .text-bg-primary {
   color: #fff !important;
-  background-color: RGBA(13, 110, 253, var(--bs-bg-opacity, 1)) !important;
+  background-color: orange !important;
 }
 
 .text-bg-secondary {
@@ -8143,7 +8146,7 @@ textarea.form-control-lg {
 
 .bg-primary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+  background-color: orange !important;
 }
 
 .bg-secondary {
@@ -11240,4 +11243,71 @@ body {
   width: 20px !important;
   font-size: 0.75rem;
   border-radius: 0.375rem !important;
+}
+
+
+/*🎈로그인버튼*/
+.btn-login{
+  --bs-btn-bg: orange;
+  --bs-btn-color: #fff;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: darkorange;
+}
+.btn-login:hover {
+  transition: 3s;
+}
+
+.top_nav {
+  -bs-bg-opacity: 1;
+  background-color: orange !important;
+}
+
+.side-nav {
+  -bs-bg-opacity: 1;
+  background-color: orange !important;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+#btnNavbarSearch {
+  background-color: orange;
+  --bs-btn-border-color: beige;
+}
+#btnNavbarSearch:hover {
+  background-color: darkorange;
+  --bs-btn-hover-border-color: none;
+  transition: 1s;
+}
+
+.form-control, .datatable-input {
+  border: 1px solid beige;
+}
+
+.card-footer{
+  background-color: #777;
+  color: #fff;
+}
+
+.card-footer .small a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.card-footer .small a:hover {
+  text-decoration: underline;
+}
+
+.card-header:first-child {
+  background-color: orange;
+}
+
+.card-header {
+  color: #fff;
 }

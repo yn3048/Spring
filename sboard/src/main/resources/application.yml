@@ -21,12 +21,14 @@ spring:
         name: sboard
     datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        password: abc1234
+        password: Dbcjs0604!
         url: jdbc:mysql://127.0.0.1:3306/jboard
         username: dpsk3048
     devtools:
         livereload:
             enabled: true
+
+
 
 
     # 이메일 설정
@@ -62,6 +64,10 @@ spring:
         multipart:
             location: uploads/
             max-file-size: 10MB
+
+    thymeleaf:
+        prefix: classpath:/templates
+
 
 # 파일 경로 설정
 file:

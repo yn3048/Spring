@@ -1,5 +1,6 @@
 package kr.co.sboard.controller;
 
+import kr.co.sboard.config.AppInfo;
 import kr.co.sboard.entity.User;
 import kr.co.sboard.security.MyUserDetails;
 import lombok.RequiredArgsConstructor;
@@ -18,6 +19,8 @@ import java.security.Principal;
 @Controller
 public class MainController {
 
+    private final AppInfo appInfo;
+
 
     // 빌드 정보 객체를 주입 받기 위해 build.gradle 파일 맨 밑에 buildInfo() 실행 해야됨
    // private final BuildProperties buildProperties;
@@ -34,16 +37,7 @@ public class MainController {
       //  User user = userDetails.getUser();
       //  log.info("user : " + user);
 
-        // 상단 BuildProperties 주입
-       // String appName = buildProperties.getName();
-       // String appVersion = buildProperties.getVersion();
-       // log.info("appVersion : " + appVersion);
-
-        // View에 출력할 데이터 모델 참조
-       // model.addAttribute("appName", appName);
-       // model.addAttribute("appVersion", appVersion);
-      //  model.addAttribute("userEmail", user.getEmail());
-
+        model.addAttribute(appInfo);
         return "/index";
     }
 }

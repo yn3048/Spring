@@ -2,6 +2,7 @@ package kr.co.sboard.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
+import kr.co.sboard.config.AppInfo;
 import kr.co.sboard.dto.TermsDTO;
 import kr.co.sboard.dto.UserDTO;
 import kr.co.sboard.service.UserService;
@@ -21,10 +22,13 @@ import java.util.Map;
 public class UserController {
 
     private final UserService userService;
+    private final AppInfo appInfo;
 
     @GetMapping("/user/login")
-    public String login(@ModelAttribute("success") String success){
+    public String login(@ModelAttribute("success") String success, Model model){
         // 매개변수  success에  @ModelAttribute 선언으로 View 참조할 수 있음
+        model.addAttribute(appInfo);
+
         return "/user/login";
     }
 
@@ -33,6 +37,7 @@ public class UserController {
 
         TermsDTO termsDTO = userService.selectTerms();
         model.addAttribute(termsDTO);
+        //model.addAttribute(appInfo);
 
         return "/user/terms";
     }

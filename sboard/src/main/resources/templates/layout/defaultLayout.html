@@ -16,7 +16,7 @@
 </head>
 
 <body class="sb-nav-fixed">
-<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark top_nav">
     <!-- Navbar Brand-->
     <a class="navbar-brand ps-3" th:href="@{/index}">Spring 게시판</a>
     <!-- Sidebar Toggle-->
@@ -44,7 +44,7 @@
 </nav>
 <div id="layoutSidenav">
     <div id="layoutSidenav_nav">
-        <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <nav class="sb-sidenav accordion sb-sidenav-dark side-nav" id="sidenavAccordion">
             <div class="sb-sidenav-menu">
                 <div class="nav">
                     <div class="sb-sidenav-menu-heading">게시판</div>
@@ -111,9 +111,9 @@
         <footer class="py-4 bg-light mt-auto">
             <div class="container-fluid px-4">
                 <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Copyright &copy; 이예나 [[${appName}]] 2024</div>
-                    <div layout:fragment="appVersion">
-                        <a href="#">[[${appVersion}]]</a>
+                    <div class="text-muted">Copyright &copy; 이예나 2024</div>
+                    <div>
+                        <a href="#">[[${appInfo.name}]] - [[${appInfo.version}]]</a>
                     </div>
                 </div>
             </div>
