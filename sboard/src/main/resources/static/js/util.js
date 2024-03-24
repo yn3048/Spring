@@ -1,4 +1,3 @@
-
 // fetch GET용
 async function fetchGet(url){
 
@@ -25,17 +24,17 @@ async function fetchGet(url){
 }
 
 // fetch POST용
-async function fetchPost(url, data){
+async function fetchPost(url, jsonData){
 
     console.log("fetchData2...1");
 
     try{
         console.log("fetchData2...2");
-        const response =  await fetch(url, {
-            method : 'POST',
-            headers: {"Content-type": "application/json"},
-            body: JSON.stringify(data)
-        })
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {"Content-type":"application/json"},
+            body: JSON.stringify(jsonData)
+        });
         console.log("fetchData2...3");
 
         if(!response.ok){
@@ -43,16 +42,16 @@ async function fetchPost(url, data){
             throw new Error('response not ok');
         }
 
-        const result = await response.json();
-        console.log("fetchData2...5 : result");
+        const data = await response.json();
+        console.log("fetchData2...5 : " + data);
 
-        return result;
+        return data;
 
-    }catch(err){
+    }catch (err) {
         console.log(err)
     }
-
 }
+
 
 // fetch DELETE 용
 async function fetchDelete(url){
