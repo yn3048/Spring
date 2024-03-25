@@ -3,6 +3,7 @@
       layout:decorate="~{/layout/defaultLayout}">
 
 <div class="container-fluid px-4" layout:fragment="content">
+
     <script th:inline="javascript">
         window.onload = function (){
 
@@ -13,42 +14,45 @@
 
                 // 파일 다운로드 요청과 동시에 다운로드 카운트 요청
                 fileLink.onclick = async function () {
-
                     const count = this.nextElementSibling.innerText;
-                                            //count 는 문자열이므로 parseInt(count)로 바꿔줘야 함
-                    this.nextElementSibling.innerText =  parseInt(count) + 1;
-
+                    this.nextElementSibling.innerText = parseInt(count) + 1;
                 }
             }
 
-            // 🎈댓글 삭제/수정(동적 이벤트 처리)//
+
+            // 🎈댓글 삭제/수정(동적 이벤트 처리)
+
             document.addEventListener('click', async function(e){
 
                 // 이벤트 대상의 클래스값이 remove일 경우
                 if(e.target.dataset.mode == 'remove'){
                     e.preventDefault();
 
+                    const result = confirmModal('정말 삭제 하시겠습니까?');
+                    console.log("result2 : " + result);
+
                     // 해당 삭제에서 가장 가까운 부모 comment 문서객체 생성
                     const comment = e.target.closest('.comment');
 
                     // 댓글 번호
                     const no = e.target.dataset.no;
+
                     console.log('no : ' + no);
+
 
                     // DELETE용 fetch 함수 정의
                     const data = fetchDelete(`/sboard/comment/${no}`);
 
-                    if(data) {
+                    if(data){
                         alertModal("삭제 되었습니다.");
                         comment.remove();
                     }
-                }else if(e.target.dataset.mode == 'modify') {
+
+                }else if(e.target.dataset.mode == 'modify'){
 
                     // 수정모드
-                    const comment = e.target.closest('.comment'); // 이벤트가 발생하는 태그의 상위 노드의 .comment 클래스
-                    console.log("수정모드1.. : " + comment);
+                    const comment = e.target.closest('.comment');
                     const textarea = comment.getElementsByTagName('textarea')[0];
-                    console.log("수정모드2..");
                     const btnModify = comment.getElementsByClassName('btnModify')[0];
                     const btnRemove = comment.getElementsByClassName('btnRemove')[0];
 
@@ -56,15 +60,16 @@
 
                     textarea.readOnly = false;
                     textarea.style.outline = "1px solid #111"
+                    textarea.focus();
                     textarea.setSelectionRange(textarea.value.length, textarea.value.length);
 
-                    btnModify.innerText = "수정";
+                    btnModify.innerText = "수정"
                     btnModify.dataset.mode = 'update';
 
-                    btnModify.innerText = "취소";
-                    btnModify.dataset.mode = 'cancel';
+                    btnRemove.innerText = "취소"
+                    btnRemove.dataset.mode = 'cancel';
 
-                }else if (e.target.dataset.mode == 'cancel'){
+                }else if(e.target.dataset.mode == 'cancel') {
                     alertModal("취소!");
                     const comment = e.target.closest('.comment');
                     const textarea = comment.getElementsByTagName('textarea')[0];
@@ -74,17 +79,18 @@
                     textarea.readOnly = true;
                     textarea.style.outline = 'none';
                     btnModify.dataset.mode = 'modify';
-                    btnRemove.innerText = "삭제";
+                    btnRemove.innerText = "삭제"
                     btnRemove.dataset.mode = 'remove';
 
-                }else if (e.target.dataset.mode == 'update') {
+                }else if(e.target.dataset.mode == 'update') {
+
                     const comment = e.target.closest('.comment');
                     const textarea = comment.getElementsByTagName('textarea')[0];
                     const no = comment.dataset.no;
 
                     const jsonData = {
-                        "no" : no,
-                        "content" : textarea.value
+                        "no": no,
+                        "content": textarea.value
                     }
 
                     console.log(jsonData);
@@ -97,11 +103,14 @@
                     alertModal("수정이 완료 되었습니다.");
 
                 }
-
             });
 
 
-            // 🎈댓글 불러오기
+
+
+
+            //🎈댓글 불러오기
+
             const commentList = document.getElementById('commentList');
             const commentPlaceholder = document.getElementById('commentPlaceholder');
 
@@ -113,45 +122,42 @@
             setTimeout(async function (){
 
                 const comments = await fetchGet(`/sboard/comment/${no}`);
-                console.log("comments : " + comments);
-
-                // 플레이스홀더 제거
+                console.log('comments : ' + comments);
                 commentPlaceholder.remove();
+                for(const comment of comments){
 
 
-                for(const comment of comments) {
-                    const commentArticle = `<div class="mb-3 commentArticle comment">
-                                            <ol class="breadcrumb mb-1">
-                                                <li class="breadcrumb-item commentWriter">${comment.writer}</li>
-                                                <li class="breadcrumb-item">${comment.rdate.substring(0, 10)}</li>
-                                            </ol>
+                    const commentArticle = `<div class="mb-3 comment" data-no="${comment.no}">
+                                                    <ol class="breadcrumb mb-1">
+                                                        <li class="breadcrumb-item">${comment.writer}</li>
+                                                        <li class="breadcrumb-item">${comment.rdate.substring(0, 10)}</li>
+                                                    </ol>
 
-                                            <textarea class="form-control" rows="3" readonly>${comment.content}</textarea>
-                                           <div class="text-end" mt-1>
-                                                <button type="button" class="btn btn-warning btn-sm btnModify" data-mode="modify" data-no="${comment.no}">수정</button>
-                                                <button type="button" class="btn btn-danger btn-sm btnRemove"  data-mode="remove" data-no="${comment.no}">삭제</button>
-                                            </div>
-                                          </div>`;
+                                                    <textarea class="form-control" rows="3" readonly>${comment.content}</textarea>
+                                                    <div class="text-end mt-1">
+                                                        <button type="button" class="btn btn-warning btn-sm btnModify" data-mode="modify" data-no="${comment.no}">수정</button>
+                                                        <button type="button" class="btn btn-danger btn-sm btnRemove" data-mode="remove" data-no="${comment.no}">삭제</button>
+                                                    </div>
+                                                </div>`;
+
                     // 태그 문자열 삽입
-                    commentList.insertAdjacentHTML(`beforeend`, commentArticle);
+                    commentList.insertAdjacentHTML('beforeend', commentArticle);
 
                 }
+            }, 2000);
 
-            }, 2000)
 
             // 🎈댓글 등록
+
             const commentForm = document.commentForm;
-            const contentForm = document.contentForm;
 
             commentForm.onsubmit = async function (e) {
                 e.preventDefault();
 
                 const jsonData = {
-                    "parent" : commentForm.parent.value,
-                    "writer" : commentForm.writer.value,
-                    "content": commentForm.content.value,
-                    "title"  : contentForm.title.value,
-                    "cate"   : commentForm.cate.value
+                    "parent": commentForm.parent.value,
+                    "writer": commentForm.writer.value,
+                    "content": commentForm.content.value
                 };
 
                 console.log(jsonData);
@@ -162,23 +168,22 @@
                 console.log(data);
 
                 // 댓글목록 동적처리
-                const commentArticle = `<div class="mb-3 commentArticle">
-                                            <ol class="breadcrumb mb-1">
-                                                <li class="breadcrumb-item commentWriter">${data.writer}</li>
-                                                <li class="breadcrumb-item">${data.rdate.substring(0, 10)}</li>
-                                            </ol>
+                const commentArticle = `<div class="mb-3 comment" data-no="${comment.no}">
+                                                <ol class="breadcrumb mb-1">
+                                                    <li class="breadcrumb-item">${data.writer}</li>
+                                                    <li class="breadcrumb-item">${data.rdate.substring(0, 10)}</li>
+                                                </ol>
 
-                                            <textarea class="form-control" rows="3" readonly>${data.content}</textarea>
-                                            <div class="text-end mt-1">
-                                                <button type="button" class="btn btn-warning btn-sm" data-no="${data.no}">수정</button>
-                                                <button type="button" class="btn btn-danger btn-sm deleteBtn" data-no="${data.no}">삭제</button>
-                                            </div>
-                                    </div>`;
+                                                <textarea class="form-control" rows="3" readonly>${data.content}</textarea>
+                                                <div class="text-end mt-1">
+                                                    <button type="button" class="btn btn-warning btn-sm" data-no="${data.no}">수정</button>
+                                                    <button type="button" class="btn btn-danger btn-sm" data-no="${data.no}">삭제</button>
+                                                </div>
+                                            </div>`;
 
                 // 태그 문자열 삽입
                 commentList.insertAdjacentHTML('beforeend', commentArticle);
             }
-
         }
     </script>
 
@@ -192,10 +197,10 @@
         </div>
         <div class="card-body">
 
-            <form name="contentForm">
+            <form>
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">글제목</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" name="title" th:value="${articleDTO.title}">
+                    <input type="email" class="form-control" id="exampleFormControlInput1" name="title" th:value="${articleDTO.title}">
                 </div>
                 <div th:if="${articleDTO.file > 0}" class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">첨부파일</label>
@@ -220,6 +225,8 @@
 
     <div class="text-end">
         <a th:href="@{/article/list}" class="btn btn-primary" id="btnSubmit">목록</a>
+        <!--<a th:href="@{/article/list}" class="btn btn-warning" id="btnmodify">수정</a>-->
+        <a th:href="@{/article/delete(no=${articleDTO.no})}" class="btn btn-danger" id="btnDelete">삭제</a>
     </div>
 
     <!-- 댓글목록 시작 -->
@@ -242,21 +249,18 @@
                 <button type="button" class="btn btn-danger btn-sm placeholder disabled col-1"></button>
             </div>
         </div>
+
     </div>
 
     <form name="commentForm">
-                                                    <!--글번호표시-->
         <input type="hidden" name="parent" th:value="${articleDTO.no}">
-                    <!--로그인이 되있을 경우 현재 로그인한 사용자 정보 표시-->
         <div th:if="${#authorization.expression('isAuthenticated()')}">
             <input type="hidden" name="writer" th:value="${#authentication.principal.user.uid}">
         </div>
-                                                <!--게시판이름 표시-->
-        <input type="hidden" name="cate" th:value="${articleDTO.cate}">
 
         <div class="input-group">
             <span class="input-group-text">댓글입력</span>
-            <textarea name="content" class="form-control"  aria-label="With textarea" rows="5"></textarea>
+            <textarea name="content" class="form-control" aria-label="With textarea" rows="5"></textarea>
         </div>
 
         <div class="mt-4 mb-4 text-end">

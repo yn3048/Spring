@@ -15,6 +15,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -106,6 +109,12 @@ public class ArticleService {
     }
 
     // fileUpload 메서드 -> FileService 클래스로 이동
+
+    
+    // 글삭제
+    public void deleteArticle(int no) {
+        articleRepository.deleteById(no);
+    }
 
 }
 

@@ -11291,7 +11291,7 @@ body {
 }
 
 .card-footer{
-  background-color: #777;
+  background-color: #444;
   color: #fff;
 }
 
@@ -11305,7 +11305,7 @@ body {
 }
 
 .card-header:first-child {
-  background-color: orange;
+  background-color: #444;
 }
 
 .card-header {

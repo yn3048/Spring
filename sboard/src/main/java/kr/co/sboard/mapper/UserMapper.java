@@ -11,6 +11,7 @@ public interface UserMapper {
     public TermsDTO selectTerms();
     public void insertUser(UserDTO userDTO);
     public int selectCountUser(@Param("type") String type, @Param("value") String value);
+    public UserDTO selectUserForFindId(String name, String email);
     public void selectUsers();
     public void updateUser();
     public void deleteUser();

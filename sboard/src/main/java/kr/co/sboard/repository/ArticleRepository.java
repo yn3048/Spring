@@ -20,8 +20,6 @@ public interface ArticleRepository extends JpaRepository<Article, Integer> {
 
     public List<Article> findByParent(int parent);
 
-
-
 }
 
 

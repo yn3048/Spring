@@ -49,6 +49,7 @@ async function fetchPost(url, jsonData){
 
     }catch (err) {
         console.log(err)
+        return  null;
     }
 }
 
@@ -108,7 +109,7 @@ function alertModal(message){
 function confirmModal(message){
 
     const modal = new bootstrap.Modal(document.getElementById('confirmModal'));
-    modal.getElementsByClassName('modal-body')[0].innerText = message;
+    modal._element.querySelector('.modal-body').innerText = message;
     modal.show(); // 모달 열기
 
     // 결과값 반환

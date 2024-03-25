@@ -9,6 +9,7 @@ import kr.co.sboard.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -104,4 +105,38 @@ public class UserController {
         }
     }
 
+    @GetMapping("/user/findId")
+    public String findId(){
+        return "/user/findId";
+    }
+
+    @GetMapping("/user/findResult")
+    public String findIdResult(HttpSession session, Model model) {
+        return "/user/findIdResult";
+    }
+
+    @GetMapping("/user/findPassword")
+    public String findPassword(){
+        return "/user/findPassword";
+    }
+
+    @GetMapping("/user/findPasswordChange")
+    public String findPasswordChange(){
+        return "/user/findPasswordChange";
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

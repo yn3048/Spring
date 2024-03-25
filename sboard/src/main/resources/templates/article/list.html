@@ -28,9 +28,9 @@
                     <td>
                         <a th:href="@{/article/view(no=${article.no})}">[[${article.title}]]</a>
                     </td>
-                    <td>dsafasdf</td>
+                    <td>[[${article.writer}]]</td>
                     <td>[[${article.hit}]]</td>
-                    <td>[[${article.rdate}]]</td>
+                    <td th:text="${#strings.substring(article.rdate, 0, 10)}"></td>
                 </tr>
                 </tbody>
             </table>

@@ -92,22 +92,29 @@ public class FileService {
 
         // 파일 조회
         kr.co.sboard.entity.File file = fileRepository.findById(fno).get();
+        log.info(file.toString());
 
         try {
             Path path = Paths.get(fileUploadPath + file.getSName());
             String contentType = Files.probeContentType(path);
+            log.info(path.toString());
+            log.info(contentType.toString());
 
             HttpHeaders headers = new HttpHeaders();
             headers.setContentDisposition(
                     ContentDisposition.builder("attachment")
                             .filename(file.getOName(), StandardCharsets.UTF_8).build());
+            log.info("headers1: " + headers);
+
 
             headers.add(HttpHeaders.CONTENT_TYPE, contentType);
             Resource resource = new InputStreamResource(Files.newInputStream(path));
+            log.info("headers2: " + resource);
 
             // 파일 다운로드 카운트 업데이트
             file.setDownload(file.getDownload() + 1);
             fileRepository.save(file);
+            log.info("file_count_update : " + file);
 
             return new ResponseEntity<>(resource, headers, HttpStatus.OK);
 
