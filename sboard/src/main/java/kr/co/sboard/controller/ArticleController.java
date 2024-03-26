@@ -85,17 +85,13 @@ public class ArticleController {
 
     }
 
-    // 글 수정
-    public String modifyArticle(int no) {
-        articleService.modifyArticle(no);
-    }
 
 
     // 글 삭제
     @GetMapping("/article/delete")
-    public String deleteArticle(int no) {
+    public String deleteArticle(int no, String cate) {
         articleService.deleteArticle(no);
-        return "redirect:/index";
+        return "redirect:/article/list?cate=" + cate;
     }
 
 }

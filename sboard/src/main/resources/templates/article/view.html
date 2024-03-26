@@ -254,7 +254,7 @@
     <div class="text-end">
         <a th:href="@{/article/list(cate=${articleDTO.cate})}" class="btn btn-primary" id="btnSubmit">목록</a>
         <a th:href="@{/article/view(no=${articleDTO.no}, cate=${articleDTO.cate})}" class="btn btn-warning" id="btnModify">수정</a>
-        <a th:href="@{/article/delete(no=${articleDTO.no})}" class="btn btn-danger" id="btnDelete">삭제</a>
+        <a th:href="@{/article/delete(no=${articleDTO.no}, cate=${articleDTO.cate})}" class="btn btn-danger" id="btnDelete">삭제</a>
         <a th:href="@{/article/modify(no=${articleDTO.no})}" class="btn btn-secondary d-none" id="btnResult">완료</a>
     </div>
 

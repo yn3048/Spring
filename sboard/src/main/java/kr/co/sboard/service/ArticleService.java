@@ -110,11 +110,6 @@ public class ArticleService {
 
     // fileUpload 메서드 -> FileService 클래스로 이동
 
-    
-    //🎈글수정
-    public void modifyArticle(int no){
-        articleRepository.
-    }
 
 
     // 🎈글삭제
