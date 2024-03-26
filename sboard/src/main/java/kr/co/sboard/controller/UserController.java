@@ -105,6 +105,7 @@ public class UserController {
         }
     }
 
+    // 🎈회원아이디 / 비번찾기
     @GetMapping("/user/findId")
     public String findId(){
         return "/user/findId";

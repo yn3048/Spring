@@ -4,6 +4,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import kr.co.sboard.dto.ArticleDTO;
 import kr.co.sboard.dto.PageRequestDTO;
 import kr.co.sboard.dto.PageResponseDTO;
+import kr.co.sboard.entity.Article;
+import kr.co.sboard.entity.Config;
+import kr.co.sboard.repository.ConfigRepositioty;
 import kr.co.sboard.service.ArticleService;
 import kr.co.sboard.service.FileService;
 import lombok.RequiredArgsConstructor;
@@ -14,6 +17,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -22,16 +26,18 @@ public class ArticleController {
 
     private final ArticleService articleService;
     private final FileService fileService;
+    private final ConfigRepositioty configRepositioty;
 
     /*
         @ModelAttribute("cate")
          - modelAttribute("cate", cate)와 동일
     */
     @GetMapping("/article/list")
-    public String list(Model model, PageRequestDTO pageRequestDTO){
+    public String list(Model model, String cate, PageRequestDTO pageRequestDTO){
 
         PageResponseDTO pageResponseDTO = articleService.findByParentAndCate(pageRequestDTO);
         log.info("pageResponseDTO : " + pageResponseDTO);
+
 
         model.addAttribute(pageResponseDTO);
 
@@ -39,9 +45,10 @@ public class ArticleController {
     }
 
     @GetMapping("/article/write")
-    public String write(@ModelAttribute("cate") String cate){
+    public String write(Model model, String cate){
         return "/article/write";
     }
+
 
     @PostMapping("/article/write")
     public String write(HttpServletRequest req, ArticleDTO articleDTO){
@@ -56,13 +63,16 @@ public class ArticleController {
 
         articleService.insertArticle(articleDTO);
 
-        return "redirect:/article/list";
+        return "redirect:/article/list"+"?cate="+articleDTO.getCate();
     }
 
     @GetMapping("/article/view")
-    public String view(int no, Model model){
+    public String view( Model model, String cate, int no){
+
 
         ArticleDTO articleDTO = articleService.findByID(no);
+        // model에 articleDTO실어서 뿌려줌 => html 문서에서 article.cate로 값 받아오기 가능
+        // write에서는 articleDTO 뿌려준적이 없기 때문에 param.cate로 값을 가져와야함
         model.addAttribute(articleDTO);
 
         return "/article/view";
@@ -75,11 +85,17 @@ public class ArticleController {
 
     }
 
+    // 글 수정
+    public String modifyArticle(int no) {
+        articleService.modifyArticle(no);
+    }
+
+
     // 글 삭제
     @GetMapping("/article/delete")
     public String deleteArticle(int no) {
         articleService.deleteArticle(no);
-        return "redirect:/article/list";
+        return "redirect:/index";
     }
 
 }

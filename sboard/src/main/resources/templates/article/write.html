@@ -21,13 +21,13 @@
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            OOO 글쓰기
+            [[${boardName}]]글쓰기
         </div>
         <div class="card-body">
 
             <form name="formWrite" th:action="@{/article/write}" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="writer" th:value="${#authentication.principal.user.uid}">
-                <input type="hidden" name="cate" th:value="${cate}">
+                <input type="hidden" name="cate" th:value="${param.cate}">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">글제목</label>
                     <input type="email" class="form-control" id="exampleFormControlInput1" name="title" placeholder="글 제목 입력">
@@ -47,8 +47,8 @@
 
     </div>
 
-    <div class="text-end">
-        <a th:href="@{/article/list}" class="btn btn-secondary">취소</a>
+    <div class="text-end">      <!--param.cate 쓰는 이유: write에는 articleDTO가 뿌려진 적이 없기 때문-->
+        <a th:href="@{/article/list(cate=${param.cate})}" class="btn btn-secondary">취소</a>
         <a th:href="@{/article/write}" class="btn btn-primary" id="btnSubmit">글등록</a>
     </div>
     <!-- 내용 끝 -->

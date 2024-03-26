@@ -9,6 +9,7 @@ import kr.co.sboard.dto.UserDTO;
 import kr.co.sboard.mapper.UserMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -35,9 +36,23 @@ public class UserService {
         return userMapper.selectCountUser(type, value);
     }
 
-    public UserDTO selectUserForFindId(UserDTO userDTO){
-        return userMapper.selectUserForFindId(userDTO.getName(), userDTO.getEmail());
-    }
+    // 아이디 찾기
+   // public UserDTO selectUserForFindId(UserDTO userDTO){
+     //   return userMapper.selectUserForFindId(userDTO.getName(), userDTO.getEmail());
+   // }
+
+  /*  public String findUid(String name, String email){
+        UserDTO userDTO = new UserDTO();
+        userDTO.setName(name);
+        userDTO.setEmail(email);
+
+        // UserMapper를 사용하여 사용자 조회
+        UserDTO foundUser = userMapper.selectUserForFindId(userDTO);
+
+        if(foundUser != null) {
+
+        }
+    }*/
 
     public void insertUser(UserDTO userDTO){
         String encoded = passwordEncoder.encode(userDTO.getPass());
