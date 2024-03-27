@@ -36,6 +36,7 @@ public class SecurityConfig {
                                     //permitAll() 할경우 => index페이지로 바로 넘어감
                                     //로그인 한 경우에만 게시판 사용 가능하도록 authenticated()인증 후 허용 설정하기
                 .requestMatchers("/").authenticated()
+                .requestMatchers("/article/**").authenticated()
                 .requestMatchers("/admin/**").hasAnyAuthority("ADMIN")
                 .requestMatchers("/manager/**").hasAnyAuthority("ADMIN","MANAGER")
                 // 존재하지 않는 페이지에 404 에러 띄우고, 존재하는 페이지는 모든 접근 허용!

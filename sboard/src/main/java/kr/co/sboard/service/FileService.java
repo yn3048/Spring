@@ -46,40 +46,46 @@ public class FileService {
 
         log.info("fileUpload...1");
 
-        // 첨부한 파일 갯수만큼 반복 처리
-        for(MultipartFile mf : articleDTO.getFiles()){
-            log.info("fileUpload...2");
+        if(articleDTO.getFiles() != null) {
 
-            //파일 첨부 안하면 에러나기 때문에 if문으로 isEmpty()로 첨부여부 먼저 확인
-            if(!mf.isEmpty()) {
+            // 첨부한 파일 갯수만큼 반복 처리
+            for(MultipartFile mf : articleDTO.getFiles()){
+                log.info("fileUpload...2");
 
-                log.info("fileUpload...3");
-                String oName = mf.getOriginalFilename();
+                //파일 첨부 안하면 에러나기 때문에 if문으로 isEmpty()로 첨부여부 먼저 확인
+                if(!mf.isEmpty()) {
 
-                log.info("fileUpload...4 : " + oName);
+                    log.info("fileUpload...3");
+                    String oName = mf.getOriginalFilename();
 
-                String ext = oName.substring(oName.lastIndexOf("."));
-                String sName = UUID.randomUUID().toString() + ext;
+                    log.info("fileUpload...4 : " + oName);
 
-                log.info("oName : " + oName);
+                    String ext = oName.substring(oName.lastIndexOf("."));
+                    String sName = UUID.randomUUID().toString() + ext;
 
-                try {
-                    // 저장
-                    mf.transferTo(new File(path, sName));
+                    log.info("oName : " + oName);
 
-                    // 파일 정보 생성
-                    FileDTO fileDTO = FileDTO.builder()
-                            .oName(oName)
-                            .sName(sName)
-                            .build();
+                    try {
+                        // 저장
+                        mf.transferTo(new File(path, sName));
 
-                    // 리스트 저장
-                    files.add(fileDTO);
+                        // 파일 정보 생성
+                        FileDTO fileDTO = FileDTO.builder()
+                                .oName(oName)
+                                .sName(sName)
+                                .build();
 
-                } catch (IOException e) {
-                    log.error("fileUpload : " + e.getMessage());
+                        // 리스트 저장
+                        files.add(fileDTO);
+
+                    } catch (IOException e) {
+                        log.error("fileUpload : " + e.getMessage());
+                    }
                 }
-            }
+
+        }
+
+
         }
 
         // 저장한 파일 정보 리스트 반환

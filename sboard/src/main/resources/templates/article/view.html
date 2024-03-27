@@ -41,8 +41,46 @@
                     contentText.readOnly = false;
                 }
 
-                btnModify.classList.add('d-none');
+                // 수정된 제목과 내용을 배열에 저장
+                const titles = [];
+                for (let i = 0; i < contentTitles.length; i++) {
+                    titles.push(contentTitles[i].value);
+                }
+
+                const contents = [];
+                for (let i = 0; i < contentTexts.length; i++) {
+                    contents.push(contentTexts[i].value);
+                }
+
+                btnModify.innerText= "완료";
+                btnModify.style.backgroundColor = "#888888";
+                btnModify.style.color = "#ffffff";
+                btnModify.style.border = "none";
                 btnDelete.classList.add('d-none');
+
+                if(btnModify.innerText === '완료') {
+
+                    const contentForm = document.contentForm;
+                    const content = document.getElementsByClassName('contentText')[0].value;
+
+                    const jsonData = {
+                        "no": contentForm.no.value,
+                        "title": contentForm.title.value,
+                        "content": content
+                    };
+
+                    console.log(jsonData)
+
+
+                    // PUT용 fetch 함수 정의(util.js)
+                    const data = await fetchUpdate(`/sboard/article/write`, jsonData);
+
+                    console.log(data)
+
+                }
+
+
+
             }
 
 
@@ -226,9 +264,11 @@
         <div class="card-body">
 
             <form name="contentForm">
+                <input type="hidden" name="no" th:value="${articleDTO.no}">
+                <input type="hidden" name="cate" th:value="${articleDTO.cate}">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">글제목</label>
-                    <input type="email" class="form-control contentTitle" id="exampleFormControlInput1" readonly name="title" th:value="${articleDTO.title}">
+                    <input type="text" class="form-control contentTitle" id="exampleFormControlInput1" readonly name="title" th:value="${articleDTO.title}">
                 </div>
                 <div th:if="${articleDTO.file > 0}" class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">첨부파일</label>
@@ -245,7 +285,7 @@
 
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">글내용</label>
-                    <textarea class="form-control contentText" id="exampleFormControlTextarea1" rows="10" name="content" readonly>[[${articleDTO.content}]]</textarea>
+                    <textarea class="form-control contentText" id="exampleFormControlTextarea1" rows="10" name="content" th:text="${articleDTO.content}" readonly>[[${articleDTO.content}]]</textarea>
                 </div>
             </form>
         </div>

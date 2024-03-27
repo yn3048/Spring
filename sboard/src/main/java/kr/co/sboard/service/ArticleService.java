@@ -79,6 +79,22 @@ public class ArticleService {
 
     public void insertArticle(ArticleDTO articleDTO){
 
+        Optional<Article> optArticle = articleRepository.findById(articleDTO.getNo());
+
+        // articleDTO를 articleEntity로 변환
+        Article article = modelMapper.map(articleDTO, Article.class);
+        log.info("test" + article);
+
+        // 🎈글 수정
+        if(optArticle.isPresent()) {
+            
+            article = optArticle.get();
+            //article => 원래 내용         // articleDTO => 수정 내용
+            article.setTitle(articleDTO.getTitle());
+            article.setContent(articleDTO.getContent());
+            
+        }
+
         // 파일 첨부 처리
         List<FileDTO> files = fileService.fileUpload(articleDTO);
         log.info("test"+files);
@@ -86,9 +102,7 @@ public class ArticleService {
         // 파일 첨부 갯수 초기화
         articleDTO.setFile(files.size());
 
-        // articleDTO를 articleEntity로 변환
-        Article article = modelMapper.map(articleDTO, Article.class);
-        log.info("test" + article);
+
 
         // 저장 후 저장한 엔티티 객체 반환(사실 JPA sava() 메서드는 default로 저장한 Entity를 반환)
         Article savedArticle = articleRepository.save(article);
@@ -105,7 +119,8 @@ public class ArticleService {
             File file = modelMapper.map(fileDTO, File.class);
 
             fileRepository.save(file);
-        }
+
+        } log.info("아무거나");
     }
 
     // fileUpload 메서드 -> FileService 클래스로 이동
