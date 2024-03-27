@@ -52,19 +52,26 @@ async function fetchPost(url, jsonData){
         return  null;
     }
 }
-// 글 수정
+
+// 🎈글 수정
 async function fetchUpdate(url, jsonData){
 
     console.log("fetchData2...1");
 
     try{
         console.log("fetchData2...2");
-        await fetch(url, {
+        const response = await fetch(url, {
             method: 'POST',
             headers: {"Content-type":"application/json"},
             body: JSON.stringify(jsonData)
         });
+
         console.log("fetchData2...3");
+
+        const data = await response.json();
+        console.log("fetchData2...4 : " + data);
+
+        return data;
 
 
     }catch (err) {

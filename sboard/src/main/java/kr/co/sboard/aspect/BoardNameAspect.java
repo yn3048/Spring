@@ -2,7 +2,7 @@ package kr.co.sboard.aspect;
 
 
 import kr.co.sboard.entity.Config;
-import kr.co.sboard.repository.ConfigRepositioty;
+import kr.co.sboard.repository.ConfigRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.annotation.*;
@@ -17,7 +17,7 @@ import java.util.Optional;
 @Component
 public class BoardNameAspect {
 
-    private final ConfigRepositioty configRepositioty;
+    private final ConfigRepository configRepository;
     /*
         - 컨트롤러의 각 메서드에 공통 로직 처리하기 위한 Asepct 모듈
         - ArticleController의 메서드 중에서 첫번째 매개변수  model, 두번째 매개변수 cate 인 모든 메서드에 실행
@@ -34,7 +34,7 @@ public class BoardNameAspect {
 
         log.info("addBoardName!!!");
 
-        Optional<Config> optConfig = configRepositioty.findById(cate);
+        Optional<Config> optConfig = configRepository.findById(cate);
         log.info("게시판 이름 : " + cate);
         String boardName = optConfig.get().getBoardName();
         model.addAttribute("boardName", boardName);

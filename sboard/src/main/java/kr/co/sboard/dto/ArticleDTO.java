@@ -36,4 +36,6 @@ public class ArticleDTO {
 
     private List<FileDTO> fileList;
 
+    private String nick;
+
 }

@@ -1,12 +1,12 @@
 package kr.co.sboard.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
+import kr.co.sboard.config.AppInfo;
 import kr.co.sboard.dto.ArticleDTO;
 import kr.co.sboard.dto.PageRequestDTO;
 import kr.co.sboard.dto.PageResponseDTO;
-import kr.co.sboard.entity.Article;
 import kr.co.sboard.entity.Config;
-import kr.co.sboard.repository.ConfigRepositioty;
+import kr.co.sboard.repository.ConfigRepository;
 import kr.co.sboard.service.ArticleService;
 import kr.co.sboard.service.FileService;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,9 +26,7 @@ import java.util.Optional;
 public class ArticleController {
 
     private final ArticleService articleService;
-    private final FileService fileService;
-    private final ConfigRepositioty configRepositioty;
-
+    private final ConfigRepository configRepository;
     /*
         @ModelAttribute("cate")
          - modelAttribute("cate", cate)와 동일
@@ -35,9 +34,17 @@ public class ArticleController {
     @GetMapping("/article/list")
     public String list(Model model, String cate, PageRequestDTO pageRequestDTO){
 
-        PageResponseDTO pageResponseDTO = articleService.findByParentAndCate(pageRequestDTO);
-        log.info("pageResponseDTO : " + pageResponseDTO);
+        PageResponseDTO pageResponseDTO = null;
 
+        if(pageRequestDTO.getKeyword() == null) {
+            // 일반 글 목록 조회
+            pageResponseDTO = articleService.selectArticles(pageRequestDTO);
+        }else {
+            // 검색 글 목록 조회
+            pageResponseDTO = articleService.searchArticles(pageRequestDTO);
+        }
+
+        log.info("pageResponseDTO : " + pageResponseDTO);
 
         model.addAttribute(pageResponseDTO);
 
@@ -45,13 +52,33 @@ public class ArticleController {
     }
 
     @GetMapping("/article/write")
-    public String write(Model model, String cate){
+    public String write(Model model, String cate, PageRequestDTO pageRequestDTO){
+
+        PageResponseDTO pageResponseDTO = PageResponseDTO.builder()
+                .pageRequestDTO(pageRequestDTO)
+                .build();
+
+        model.addAttribute(pageResponseDTO);
+
         return "/article/write";
     }
 
 
+
+    @GetMapping("/article/view")
+    public String view(Model model, String cate, int no){
+        ArticleDTO articleDTO = articleService.findById(no);
+
+        // ✨model에 articleDTO실어서 뿌려줌 => html 문서에서 article.cate로 값 받아오기 가능
+        // ✨write에서는 articleDTO 뿌려준적이 없기 때문에 param.cate로 값을 가져와야함
+        model.addAttribute(articleDTO);
+
+        return "/article/view";
+    }
+
+
     @PostMapping("/article/write")
-    public String write(HttpServletRequest req, @RequestBody ArticleDTO articleDTO){
+    public String write(HttpServletRequest req, ArticleDTO articleDTO){
         /*
             글작성을 테스트할 때는 로그인해야하기 때문에
             SecurityConfig 인가 설정 수정할 것
@@ -63,38 +90,29 @@ public class ArticleController {
 
         articleService.insertArticle(articleDTO);
 
-        return "redirect:/article/list"+"?cate="+articleDTO.getCate();
+        return "redirect:/article/list";
     }
 
-    @GetMapping("/article/view")
-    public String view( Model model, String cate, int no){
-
-
-        ArticleDTO articleDTO = articleService.findByID(no);
-        // model에 articleDTO실어서 뿌려줌 => html 문서에서 article.cate로 값 받아오기 가능
-        // write에서는 articleDTO 뿌려준적이 없기 때문에 param.cate로 값을 가져와야함
+    // 🎈글수정
+    @GetMapping("/article/modify")
+    public String modify(int no, Model model){
+        ArticleDTO articleDTO = articleService.findById(no);
         model.addAttribute(articleDTO);
-
-        return "/article/view";
+        return "/article/modify";
     }
 
-    // ajax로 요청
-    @GetMapping("/article/filedownload")
-    public ResponseEntity<?> fileDownload(int fno){
-       return fileService.fileDownload(fno);
+    @PostMapping("/article/modify")
+    public String modify(ArticleDTO articleDTO){
+        articleService.updateArticle();
 
+
+        return "redirect:/article/view";
     }
 
+    // fileDownload 메서드 FileController로 이동
 
-    // 글 삭제
-    @GetMapping("/article/delete")
-    public String deleteArticle(int no, String cate) {
-        articleService.deleteArticle(no);
-        return "redirect:/article/list?cate=" + cate;
-    }
 
 }
-
 
 
 

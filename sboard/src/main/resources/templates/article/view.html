@@ -19,72 +19,6 @@
                 }
             }
 
-            // 🎈글 수정
-            const btnModify = document.getElementById('btnModify');
-
-            btnModify.onclick = async function(e){
-                e.preventDefault();
-                const contentTitles = document.getElementsByClassName('contentTitle');
-                const contentTexts = document.getElementsByClassName('contentText');
-                const btnModify = document.getElementById('btnModify');
-                const btnDelete = document.getElementById('btnDelete');
-
-                //✨HTMLCollection은 배열이 아닌 유사 배열 객체입니다. 따라서 readonly 속성을 직접 설정할 수 없습니다.
-                //해당 요소에 대해 반복하여 readonly 속성을 설정해야 합니다.
-                // 모든 contentTitle 요소에 대해 readonly 속성 해제
-                for (let contentTitle of contentTitles) {
-                    contentTitle.readOnly = false;
-                }
-
-                // 모든 contentText 요소에 대해 readonly 속성 해제
-                for (let contentText of contentTexts) {
-                    contentText.readOnly = false;
-                }
-
-                // 수정된 제목과 내용을 배열에 저장
-                const titles = [];
-                for (let i = 0; i < contentTitles.length; i++) {
-                    titles.push(contentTitles[i].value);
-                }
-
-                const contents = [];
-                for (let i = 0; i < contentTexts.length; i++) {
-                    contents.push(contentTexts[i].value);
-                }
-
-                btnModify.innerText= "완료";
-                btnModify.style.backgroundColor = "#888888";
-                btnModify.style.color = "#ffffff";
-                btnModify.style.border = "none";
-                btnDelete.classList.add('d-none');
-
-                if(btnModify.innerText === '완료') {
-
-                    const contentForm = document.contentForm;
-                    const content = document.getElementsByClassName('contentText')[0].value;
-
-                    const jsonData = {
-                        "no": contentForm.no.value,
-                        "title": contentForm.title.value,
-                        "content": content
-                    };
-
-                    console.log(jsonData)
-
-
-                    // PUT용 fetch 함수 정의(util.js)
-                    const data = await fetchUpdate(`/sboard/article/write`, jsonData);
-
-                    console.log(data)
-
-                }
-
-
-
-            }
-
-
-
 
             // 🎈댓글 삭제/수정(동적 이벤트 처리)
 
@@ -293,9 +227,9 @@
 
     <div class="text-end">
         <a th:href="@{/article/list(cate=${articleDTO.cate})}" class="btn btn-primary" id="btnSubmit">목록</a>
-        <a th:href="@{/article/view(no=${articleDTO.no}, cate=${articleDTO.cate})}" class="btn btn-warning" id="btnModify">수정</a>
+        <a th:href="@{/article/modify(no=${articleDTO.no}, cate=${articleDTO.cate})}" class="btn btn-warning" id="btnModify">수정</a>
         <a th:href="@{/article/delete(no=${articleDTO.no}, cate=${articleDTO.cate})}" class="btn btn-danger" id="btnDelete">삭제</a>
-        <a th:href="@{/article/modify(no=${articleDTO.no})}" class="btn btn-secondary d-none" id="btnResult">완료</a>
+        <a th:href="@{/article/view(no=${articleDTO.no})}" class="btn btn-secondary d-none" id="btnResult">완료</a>
     </div>
 
     <!-- 댓글목록 시작 -->

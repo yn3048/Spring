@@ -19,4 +19,6 @@ public class FileDTO {
     private String sName;
     private int download;
     private LocalDateTime rdate;
+
+    private String nick;
 }

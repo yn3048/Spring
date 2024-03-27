@@ -11254,8 +11254,9 @@ body {
   --bs-btn-hover-bg: darkorange;
 }
 .btn-login:hover {
-  transition: 3s;
+  transition: 1s;
 }
+
 
 .top_nav {
   -bs-bg-opacity: 1;
@@ -11278,7 +11279,7 @@ body {
 
 #btnNavbarSearch {
   background-color: orange;
-  --bs-btn-border-color: beige;
+  --bs-btn-border-color: orange;
 }
 #btnNavbarSearch:hover {
   background-color: darkorange;
@@ -11310,4 +11311,17 @@ body {
 
 .card-header {
   color: #fff;
+}
+
+/*🎈nav 검색박스*/
+/* .inputNavbarSearch {
+  border: 1px solid orange;
+}
+
+#btnNavbarSearch {
+  border: 1px solid orange;
+}
+*/
+.form-control, .datatable-input {
+  border: 1px solid #bebebf;
 }
