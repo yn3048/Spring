@@ -22,7 +22,7 @@ public interface ArticleRepository extends JpaRepository<Article, Integer>, Arti
     public Page<Article> findByParentAndCate(int parent, String cate, Pageable pageable);
 
     public List<Article> findByParent(int parent);
-    public Article updateByNo(int no);
+ //   public Article updateByNo(int no);
 
 
 }

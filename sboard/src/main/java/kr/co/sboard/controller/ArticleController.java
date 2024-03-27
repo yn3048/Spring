@@ -103,7 +103,6 @@ public class ArticleController {
 
     @PostMapping("/article/modify")
     public String modify(ArticleDTO articleDTO){
-        articleService.updateArticle();
 
 
         return "redirect:/article/view";
@@ -111,6 +110,12 @@ public class ArticleController {
 
     // fileDownload 메서드 FileController로 이동
 
+    @GetMapping("/article/delete")
+    public String delete(int no) {
+        articleService.findById(no);
+
+        return "redirect:/article/list";
+    }
 
 }
 

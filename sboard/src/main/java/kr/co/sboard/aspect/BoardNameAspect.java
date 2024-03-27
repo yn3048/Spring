@@ -37,6 +37,7 @@ public class BoardNameAspect {
         Optional<Config> optConfig = configRepository.findById(cate);
         log.info("게시판 이름 : " + cate);
         String boardName = optConfig.get().getBoardName();
+        log.info("게시판 이름2..");
         model.addAttribute("boardName", boardName);
     }
 

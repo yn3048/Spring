@@ -200,6 +200,7 @@
             <form name="contentForm">
                 <input type="hidden" name="no" th:value="${articleDTO.no}">
                 <input type="hidden" name="cate" th:value="${articleDTO.cate}">
+                <input type="hidden" name="writer" th:value="${articleDTO.nick}">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">글제목</label>
                     <input type="text" class="form-control contentTitle" id="exampleFormControlInput1" readonly name="title" th:value="${articleDTO.title}">

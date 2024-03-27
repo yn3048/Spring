@@ -111,11 +111,10 @@ public class ArticleService {
 
 
     // 🎈글 수정
-    public void updateArticle(ArticleDTO articleDTO){
+  //  public void updateArticle(ArticleDTO articleDTO){
 
 
-
-    }
+  //  }
 
 
     // 🎈파일 등록
