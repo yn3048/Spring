@@ -95,17 +95,23 @@ public class ArticleController {
 
     // 🎈글수정
     @GetMapping("/article/modify")
-    public String modify(int no, Model model){
+    public String modify(Model model, int no){
+        // 파일 넘버로 원래 글 조회 => 괄호 안에 Article DTO article DTO 써도 되지만 그렇게 되면
+        // 주소 파라미터 값이 너무 길어져서 비추함
+        // 파일 넘버 값으로 글 내용 받아와서 articleDTO에 담는다.
         ArticleDTO articleDTO = articleService.findById(no);
+        log.info("get article..1");
+        // model => 화면에 데이터 뿌려줄 때 사용
         model.addAttribute(articleDTO);
+        log.info("get article...2");
         return "/article/modify";
     }
 
     @PostMapping("/article/modify")
-    public String modify(ArticleDTO articleDTO){
-
-
-        return "redirect:/article/view";
+    public String modify(Model model, Integer no, ArticleDTO articleDTO){
+        articleService.updateArticle(no);
+        model.addAttribute(articleDTO);
+        return "redirect:/article/list";
     }
 
     // fileDownload 메서드 FileController로 이동

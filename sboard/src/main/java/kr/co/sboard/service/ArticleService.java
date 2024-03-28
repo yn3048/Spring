@@ -8,6 +8,7 @@ import kr.co.sboard.dto.PageResponseDTO;
 import kr.co.sboard.entity.Article;
 import kr.co.sboard.entity.Config;
 import kr.co.sboard.entity.File;
+import kr.co.sboard.mapper.UserMapper;
 import kr.co.sboard.repository.ArticleRepository;
 import kr.co.sboard.repository.ConfigRepository;
 import kr.co.sboard.repository.FileRepository;
@@ -34,6 +35,7 @@ public class ArticleService {
     private final FileService fileService;
     private final FileRepository fileRepository;
     private final ModelMapper modelMapper;
+    private final UserMapper userMapper;
 
     public PageResponseDTO selectArticles(PageRequestDTO pageRequestDTO){
 
@@ -73,10 +75,21 @@ public class ArticleService {
     public PageResponseDTO searchArticles(PageRequestDTO pageRequestDTO){
 
         Pageable pageable = pageRequestDTO.getPageable("no");
-        Page<Article> pageArticle = articleRepository.searchArticles(pageRequestDTO, pageable);
+        Page<Tuple> pageArticle = articleRepository.searchArticles(pageRequestDTO, pageable);
 
         List<ArticleDTO> dtoList = pageArticle.getContent().stream()
-                .map(entity -> modelMapper.map(entity, ArticleDTO.class))
+                .map(tuple ->
+                        {
+                            log.info("tuple : " + tuple);
+                            Article article = tuple.get(0, Article.class);
+                            String nick = tuple.get(1, String.class);
+                            article.setNick(nick);
+
+                            log.info("article : " + article);
+
+                            return modelMapper.map(article, ArticleDTO.class);
+                        }
+                )
                 .toList();
 
         int total = (int) pageArticle.getTotalElements();
@@ -111,13 +124,11 @@ public class ArticleService {
 
 
     // 🎈글 수정
-  //  public void updateArticle(ArticleDTO articleDTO){
+    public void updateArticle(Integer no) {
+        userMapper.updateByNo(no);
+    }
 
-
-  //  }
-
-
-    // 🎈파일 등록
+    // 🎈글 등록 with 파일
     public void insertArticle(ArticleDTO articleDTO){
 
         // 파일 첨부 처리

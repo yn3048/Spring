@@ -18,15 +18,15 @@
         </div>
         <div class="card-body">
 
-            <form name="formWrite" th:action="@{/article/write}" method="post" enctype="multipart/form-data">
+            <form name="formWrite" th:action="@{/article/modify{id}(id=${articleDTO.no})}" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="writer" th:value="${#authentication.principal.user.uid}">
                 <input type="hidden" name="cate" th:value="${param.cate}">
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Title</label>
+                    <label for="exampleFormControlInput1" class="form-label">글제목</label>
                     <input type="email" class="form-control" id="exampleFormControlInput1" name="title" placeholder="글 제목 입력" th:value="${articleDTO.title}">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Content</label>
+                    <label for="exampleFormControlTextarea1" class="form-label">글내용</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="content" placeholder="글 내용 입력" th:text="${articleDTO.content}">내용</textarea>
                 </div>
                 <!--
@@ -43,7 +43,7 @@
 
     <div class="text-end">      <!--param.cate 쓰는 이유: write에는 articleDTO가 뿌려진 적이 없기 때문-->
         <a th:href="@{/article/list(cate=${param.cate})}" class="btn btn-secondary">취소</a>
-        <a th:href="@{/article/write}" class="btn btn-primary" id="btnSubmit">등록</a>
+        <a th:href="@{/article/modify}" class="btn btn-primary" id="btnSubmit">등록</a>
     </div>
     <!-- 내용 끝 -->
 </div>

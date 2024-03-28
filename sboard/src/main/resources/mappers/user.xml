@@ -38,4 +38,12 @@
         regDate=NOW()
     </insert>
 
+    <update id="updateByNo">
+        UPDATE article SET
+                        title = #{title},
+                        content = #{content}
+                        WHERE
+                        no = #{no}
+    </update>
+
 </mapper>
