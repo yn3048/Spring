@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <script>
+
+        window.onload = function (){
+
+            const form = document.formUser;
+
+            form.onsubmit = function (e) {
+                e.preventDefault();
+                alert("성공!✨");
+
+
+                const jsonData = {
+                    "uid" : form.uid.value,
+                    "pass" : form.pass.value
+                };
+
+                fetch("/ch10/login", {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(jsonData)
+                })
+                    .then(response => {
+                        if(!response.ok){
+                            throw new Error('not Found');
+                        }
+                        return response.json()
+                    })
+                    .then(data => {
+                        console.log(data);
+                        // 회원이 맞으면 엑세스 코드 저장
+                        localStorage.setItem("grantType", data.grantType);
+                        localStorage.setItem("accessToken", data.access);
+
+                        // 이동
+                        location.href = '/ch10/user/list';
+                    })
+                    .catch(err =>{
+                        console.log(err);
+                        // 회원이 아니면
+                        alert("회원이 아닙니다.😓");
+                    });
+            }
+
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <h3>로그인</h3>
+    <form name="formUser" method="post">
+        <input type="text" name="uid"/><br>
+        <input type="password" name="pass"/><br>
+        <input type="submit" value="로그인"/><br>
+    </form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

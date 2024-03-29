@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="ch04:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="754f704f-5621-42a8-aa7a-1402129b3795" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../ch05/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ch05/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../oauthTest/src/main/java/kr/co/oauth/security/MyUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/../oauthTest/src/main/java/kr/co/oauth/security/MyUserDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../oauthTest/src/main/java/kr/co/oauth/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../oauthTest/src/main/java/kr/co/oauth/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../oauthTest/src/main/java/kr/co/oauth/security/SecurityUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../oauthTest/src/main/java/kr/co/oauth/security/SecurityUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sboard/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../sboard/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sboard/logs/sboard.log" beforeDir="false" afterPath="$PROJECT_DIR$/../sboard/logs/sboard.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sboard/src/main/generated/kr/co/sboard/entity/QUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sboard/src/main/generated/kr/co/sboard/entity/QUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sboard/src/main/java/kr/co/sboard/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sboard/src/main/java/kr/co/sboard/controller/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sboard/src/main/java/kr/co/sboard/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sboard/src/main/java/kr/co/sboard/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sboard/src/main/java/kr/co/sboard/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sboard/src/main/java/kr/co/sboard/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sboard/src/main/java/kr/co/sboard/security/MyUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sboard/src/main/java/kr/co/sboard/security/MyUserDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sboard/src/main/java/kr/co/sboard/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sboard/src/main/java/kr/co/sboard/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sboard/src/main/java/kr/co/sboard/service/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sboard/src/main/java/kr/co/sboard/service/ArticleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sboard/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../sboard/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sboard/src/main/resources/mappers/user.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sboard/src/main/resources/mappers/user.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sboard/src/main/resources/templates/article/modify.html" beforeDir="false" afterPath="$PROJECT_DIR$/../sboard/src/main/resources/templates/article/modify.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sboard/src/main/resources/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../sboard/src/main/resources/templates/user/login.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Jsp File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2dFUOU2nrgIHnyYAKZdT3baUCum" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JavaScript Debug.list.jsp.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.ch04.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.list.jsp (1).executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.list.jsp.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/java/Desktop/workspace/Spring/ch05&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\java\Desktop\workspace\Spring\ch04\src\main\webapp\WEB-INF\views\user5" />
+      <recent name="C:\Users\java\Desktop\workspace\Spring\ch04\src\main\webapp\WEB-INF\views\user4" />
+      <recent name="C:\Users\java\Desktop\workspace\Spring\ch04\src\main\webapp\WEB-INF\views\user3" />
+      <recent name="C:\Users\java\Desktop\workspace\Spring\ch04\src\main\webapp\WEB-INF\views\user2" />
+      <recent name="C:\Users\java\Desktop\workspace\Spring\ch04\src\main\webapp\WEB-INF\views\user1" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.ch04">
+    <configuration name="list.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/ch04_war_exploded/WEB-INF/views/user1/list.jsp">
+      <method v="2" />
+    </configuration>
+    <configuration name="ch04" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.19" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="COMMON_VM_ARGUMENTS" value="-Duser.language=en -Duser.region=us" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+      <deployment>
+        <artifact name="ch04:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/ch04" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="aac00076-22be-4c17-b002-6230394f768c" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="56164" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="ch04:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="list.jsp (1)" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 10.1.19" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/WEB-INF/views/user1/list.jsp" />
+      <deployment>
+        <artifact name="ch04:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/ch04_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="f11d3183-fa45-4915-bedd-1d58d2bfe554" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="ch04:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="list.jsp" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 10.1.19" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/WEB-INF/views/user5/list.jsp" />
+      <deployment>
+        <artifact name="ch04:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/ch04_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="665f8227-45bd-427f-a409-ab13f06f0639" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="ch04:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Tomcat Server.list.jsp (1)" />
+        <item itemvalue="JavaScript Debug.list.jsp" />
+        <item itemvalue="Tomcat Server.list.jsp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-4caba194b151-107bc6b7" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="754f704f-5621-42a8-aa7a-1402129b3795" name="Changes" comment="" />
+      <created>1709603288063</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709603288063</updated>
+      <workItem from="1709603289113" duration="112000" />
+      <workItem from="1709603407189" duration="860000" />
+      <workItem from="1709604275428" duration="6080000" />
+      <workItem from="1709610368929" duration="21283000" />
+      <workItem from="1709681816904" duration="1157000" />
+      <workItem from="1709682980746" duration="735000" />
+      <workItem from="1709684347493" duration="573000" />
+      <workItem from="1709684926195" duration="1267000" />
+      <workItem from="1709690359248" duration="622000" />
+      <workItem from="1709691778519" duration="25000" />
+      <workItem from="1709692761583" duration="1293000" />
+      <workItem from="1709712910821" duration="31000" />
+      <workItem from="1709722450865" duration="441000" />
+      <workItem from="1709722898254" duration="4007000" />
+      <workItem from="1711612772789" duration="11000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

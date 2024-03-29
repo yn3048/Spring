@@ -1,0 +1,158 @@
+2024-03-15T10:01:15.771+09:00  INFO 1924 --- [ch10] [restartedMain] kr.co.ch10.Ch10Application               : Starting Ch10Application using Java 17.0.9 with PID 1924 (C:\Users\java\Desktop\workspace\Spring\ch10\build\classes\java\main started by java in C:\Users\java\Desktop\workspace\Spring\ch10)
+2024-03-15T10:01:15.772+09:00  INFO 1924 --- [ch10] [restartedMain] kr.co.ch10.Ch10Application               : No active profile set, falling back to 1 default profile: "default"
+2024-03-15T10:01:15.804+09:00  INFO 1924 --- [ch10] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-03-15T10:01:15.804+09:00  INFO 1924 --- [ch10] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-03-15T10:01:16.130+09:00  INFO 1924 --- [ch10] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-15T10:01:16.155+09:00  INFO 1924 --- [ch10] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 1 JPA repository interface.
+2024-03-15T10:01:16.434+09:00  INFO 1924 --- [ch10] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-03-15T10:01:16.439+09:00  INFO 1924 --- [ch10] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-15T10:01:16.440+09:00  INFO 1924 --- [ch10] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-15T10:01:16.467+09:00  INFO 1924 --- [ch10] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/ch10]   : Initializing Spring embedded WebApplicationContext
+2024-03-15T10:01:16.467+09:00  INFO 1924 --- [ch10] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 661 ms
+2024-03-15T10:01:16.541+09:00  INFO 1924 --- [ch10] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-15T10:01:16.564+09:00  INFO 1924 --- [ch10] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-15T10:01:16.579+09:00  INFO 1924 --- [ch10] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-15T10:01:16.694+09:00  INFO 1924 --- [ch10] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-15T10:01:16.711+09:00  INFO 1924 --- [ch10] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-15T10:01:16.862+09:00  INFO 1924 --- [ch10] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@cc9067b
+2024-03-15T10:01:16.863+09:00  INFO 1924 --- [ch10] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-15T10:01:16.892+09:00  WARN 1924 --- [ch10] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-15T10:01:17.320+09:00  INFO 1924 --- [ch10] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-15T10:01:17.347+09:00  INFO 1924 --- [ch10] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-15T10:01:17.355+09:00  WARN 1924 --- [ch10] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtProvider' defined in file [C:\Users\java\Desktop\workspace\Spring\ch10\build\classes\java\main\kr\co\ch10\jwt\JwtProvider.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'java.lang.String' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-03-15T10:01:17.355+09:00  INFO 1924 --- [ch10] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-15T10:01:17.357+09:00  INFO 1924 --- [ch10] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-15T10:01:17.362+09:00  INFO 1924 --- [ch10] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-15T10:01:17.362+09:00  INFO 1924 --- [ch10] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-03-15T10:01:17.369+09:00  INFO 1924 --- [ch10] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-03-15T10:01:17.384+09:00 ERROR 1924 --- [ch10] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in kr.co.ch10.jwt.JwtProvider required a bean of type 'java.lang.String' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'java.lang.String' in your configuration.
+
+2024-03-15T10:01:58.835+09:00  INFO 3028 --- [ch10] [restartedMain] kr.co.ch10.Ch10Application               : Starting Ch10Application using Java 17.0.9 with PID 3028 (C:\Users\java\Desktop\workspace\Spring\ch10\build\classes\java\main started by java in C:\Users\java\Desktop\workspace\Spring\ch10)
+2024-03-15T10:01:58.836+09:00  INFO 3028 --- [ch10] [restartedMain] kr.co.ch10.Ch10Application               : No active profile set, falling back to 1 default profile: "default"
+2024-03-15T10:01:58.858+09:00  INFO 3028 --- [ch10] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-03-15T10:01:58.859+09:00  INFO 3028 --- [ch10] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-03-15T10:01:59.163+09:00  INFO 3028 --- [ch10] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-15T10:01:59.187+09:00  INFO 3028 --- [ch10] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 1 JPA repository interface.
+2024-03-15T10:01:59.454+09:00  INFO 3028 --- [ch10] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-03-15T10:01:59.459+09:00  INFO 3028 --- [ch10] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-15T10:01:59.459+09:00  INFO 3028 --- [ch10] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-15T10:01:59.486+09:00  INFO 3028 --- [ch10] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/ch10]   : Initializing Spring embedded WebApplicationContext
+2024-03-15T10:01:59.486+09:00  INFO 3028 --- [ch10] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 627 ms
+2024-03-15T10:01:59.559+09:00  INFO 3028 --- [ch10] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-15T10:01:59.582+09:00  INFO 3028 --- [ch10] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-15T10:01:59.597+09:00  INFO 3028 --- [ch10] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-15T10:01:59.710+09:00  INFO 3028 --- [ch10] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-15T10:01:59.730+09:00  INFO 3028 --- [ch10] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-15T10:01:59.859+09:00  INFO 3028 --- [ch10] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6acffc14
+2024-03-15T10:01:59.860+09:00  INFO 3028 --- [ch10] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-15T10:01:59.885+09:00  WARN 3028 --- [ch10] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-15T10:02:00.299+09:00  INFO 3028 --- [ch10] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-15T10:02:00.326+09:00  INFO 3028 --- [ch10] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-15T10:02:00.334+09:00  WARN 3028 --- [ch10] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtProvider' defined in file [C:\Users\java\Desktop\workspace\Spring\ch10\build\classes\java\main\kr\co\ch10\jwt\JwtProvider.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'java.lang.String' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2024-03-15T10:02:00.334+09:00  INFO 3028 --- [ch10] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-15T10:02:00.336+09:00  INFO 3028 --- [ch10] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-15T10:02:00.340+09:00  INFO 3028 --- [ch10] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-15T10:02:00.341+09:00  INFO 3028 --- [ch10] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-03-15T10:02:00.347+09:00  INFO 3028 --- [ch10] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-03-15T10:02:00.359+09:00 ERROR 3028 --- [ch10] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in kr.co.ch10.jwt.JwtProvider required a bean of type 'java.lang.String' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'java.lang.String' in your configuration.
+
+2024-03-15T10:55:24.864+09:00  INFO 4532 --- [ch10] [restartedMain] kr.co.ch10.Ch10Application               : Starting Ch10Application using Java 17.0.9 with PID 4532 (C:\Users\java\Desktop\workspace\Spring\ch10\build\classes\java\main started by java in C:\Users\java\Desktop\workspace\Spring\ch10)
+2024-03-15T10:55:24.865+09:00  INFO 4532 --- [ch10] [restartedMain] kr.co.ch10.Ch10Application               : No active profile set, falling back to 1 default profile: "default"
+2024-03-15T10:55:24.886+09:00  INFO 4532 --- [ch10] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-03-15T10:55:24.887+09:00  INFO 4532 --- [ch10] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-03-15T10:55:25.222+09:00  INFO 4532 --- [ch10] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-15T10:55:25.250+09:00  INFO 4532 --- [ch10] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 1 JPA repository interface.
+2024-03-15T10:55:25.520+09:00  INFO 4532 --- [ch10] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-03-15T10:55:25.526+09:00  INFO 4532 --- [ch10] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-15T10:55:25.526+09:00  INFO 4532 --- [ch10] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-15T10:55:25.554+09:00  INFO 4532 --- [ch10] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/ch10]   : Initializing Spring embedded WebApplicationContext
+2024-03-15T10:55:25.554+09:00  INFO 4532 --- [ch10] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 667 ms
+2024-03-15T10:55:25.627+09:00  INFO 4532 --- [ch10] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-15T10:55:25.651+09:00  INFO 4532 --- [ch10] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-15T10:55:25.666+09:00  INFO 4532 --- [ch10] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-15T10:55:25.783+09:00  INFO 4532 --- [ch10] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-15T10:55:25.803+09:00  INFO 4532 --- [ch10] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-15T10:55:25.935+09:00  INFO 4532 --- [ch10] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6c71657b
+2024-03-15T10:55:25.937+09:00  INFO 4532 --- [ch10] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-15T10:55:25.963+09:00  WARN 4532 --- [ch10] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-15T10:55:26.371+09:00  INFO 4532 --- [ch10] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-15T10:55:26.398+09:00  INFO 4532 --- [ch10] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-15T10:55:26.404+09:00  WARN 4532 --- [ch10] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jwtProvider' defined in file [C:\Users\java\Desktop\workspace\Spring\ch10\build\classes\java\main\kr\co\ch10\jwt\JwtProvider.class]: Unexpected exception during bean creation
+2024-03-15T10:55:26.405+09:00  INFO 4532 --- [ch10] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-15T10:55:26.407+09:00  INFO 4532 --- [ch10] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-15T10:55:26.411+09:00  INFO 4532 --- [ch10] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-15T10:55:26.411+09:00  INFO 4532 --- [ch10] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2024-03-15T10:55:26.417+09:00  INFO 4532 --- [ch10] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-03-15T10:55:26.426+09:00 ERROR 4532 --- [ch10] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jwtProvider' defined in file [C:\Users\java\Desktop\workspace\Spring\ch10\build\classes\java\main\kr\co\ch10\jwt\JwtProvider.class]: Unexpected exception during bean creation
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:535) ~[spring-beans-6.1.4.jar:6.1.4]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:325) ~[spring-beans-6.1.4.jar:6.1.4]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.4.jar:6.1.4]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:323) ~[spring-beans-6.1.4.jar:6.1.4]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.1.4.jar:6.1.4]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.4.jar:6.1.4]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:959) ~[spring-context-6.1.4.jar:6.1.4]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.4.jar:6.1.4]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.3.jar:3.2.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.3.jar:3.2.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.3.jar:3.2.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.3.jar:3.2.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-3.2.3.jar:3.2.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-3.2.3.jar:3.2.3]
+	at kr.co.ch10.Ch10Application.main(Ch10Application.java:10) ~[main/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.3.jar:3.2.3]
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'jwt.issuer' in value "${jwt.issuer}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180) ~[spring-core-6.1.4.jar:6.1.4]
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126) ~[spring-core-6.1.4.jar:6.1.4]
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239) ~[spring-core-6.1.4.jar:6.1.4]
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210) ~[spring-core-6.1.4.jar:6.1.4]
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:200) ~[spring-context-6.1.4.jar:6.1.4]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:921) ~[spring-beans-6.1.4.jar:6.1.4]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1374) ~[spring-beans-6.1.4.jar:6.1.4]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353) ~[spring-beans-6.1.4.jar:6.1.4]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:907) ~[spring-beans-6.1.4.jar:6.1.4]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:785) ~[spring-beans-6.1.4.jar:6.1.4]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237) ~[spring-beans-6.1.4.jar:6.1.4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1355) ~[spring-beans-6.1.4.jar:6.1.4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1192) ~[spring-beans-6.1.4.jar:6.1.4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562) ~[spring-beans-6.1.4.jar:6.1.4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.4.jar:6.1.4]
+	... 19 common frames omitted
+
