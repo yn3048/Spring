@@ -125,9 +125,9 @@
                 console.log('comments : ' + comments);
                 commentPlaceholder.remove();
                 for(const comment of comments){
-
-
-                    let commentArticle = `<div class="mb-3 comment" data-no="${comment.no}">
+                    let commentArticle;
+                    if(document.getElementById('userCheck').value === comment.writer) {
+                        commentArticle = `<div class="mb-3 comment" data-no="${comment.no}">
                                                     <ol class="breadcrumb mb-1">
                                                         <li class="breadcrumb-item">${comment.writer}</li>
                                                         <li class="breadcrumb-item">${comment.rdate.substring(0, 10)}</li>
@@ -139,6 +139,19 @@
                                                         <button type="button" class="btn btn-danger btn-sm btnRemove" data-mode="remove" data-no="${comment.no}">삭제</button>
                                                     </div>
                                                 </div>`;
+
+                    }else{
+                        commentArticle = `<div class="mb-3 comment" data-no="${comment.no}">
+                                                    <ol class="breadcrumb mb-1">
+                                                        <li class="breadcrumb-item">${comment.writer}</li>
+                                                        <li class="breadcrumb-item">${comment.rdate.substring(0, 10)}</li>
+                                                    </ol>
+
+                                                    <textarea class="form-control" rows="3" readonly>${comment.content}</textarea>
+                                                    <div class="text-end mt-1"></div>
+                                                </div>`;
+                    }
+
 
                     // 태그 문자열 삽입
                     commentList.insertAdjacentHTML('beforeend', commentArticle);
@@ -196,7 +209,7 @@
             [[${boardName}]] 글보기
         </div>
         <div class="card-body">
-            <input type="hidden" name="writer" th:value="${#authentication.principal.user.uid}">
+            <input type="hidden" name="writer" id="userCheck" th:value="${#authentication.principal.user.uid}">
             <form name="contentForm">
                 <input type="hidden" name="no" th:value="${articleDTO.no}">
                 <input type="hidden" name="cate" th:value="${articleDTO.cate}">
