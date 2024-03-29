@@ -1,0 +1,63 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layout/defaultLayout}">
+
+<div class="container-fluid px-4" layout:fragment="content">
+
+    <script>
+
+        window.onload = function (){
+            const btnSubmit = document.getElementById('btnSubmit');
+
+            btnSubmit.onclick = function (e){
+                e.preventDefault();
+                alert("수정이 성공적으로 완료되었습니다!");
+                document.formWrite.submit();
+
+            }
+        }
+
+    </script>
+
+    <h3 class="mt-4 mb-4">게시판 글수정</h3>
+
+    <!-- 내용 시작 -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-table me-1"></i>
+            [[${boardName}]]글수정
+        </div>
+        <div class="card-body">
+
+            <form name="formWrite" th:action="@{/article/modify}" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="writer" th:value="${#authentication.principal.user.uid}">
+                <input type="hidden" name="cate" th:value="${articleDTO.cate}">
+                <input type="hidden" name="no" th:value="${articleDTO.no}">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">글제목</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" name="title" placeholder="글 제목 입력" th:value="${articleDTO.title}">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">글내용</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="content" placeholder="글 내용 입력" th:text="${articleDTO.content}">내용</textarea>
+                </div>
+                <!--
+                <div class="mb-3">
+                    <label for="formFileMultiple" class="form-label">파일첨부</label>
+                    <input class="form-control" type="file" name="files" id="formFileMultiple" multiple>
+                </div>
+                -->
+                <div class="text-end">      <!--param.cate 쓰는 이유: write에는 articleDTO가 뿌려진 적이 없기 때문-->
+                    <a th:href="@{/article/list(cate=${param.cate})}" class="btn btn-secondary">취소</a>
+                    <a th:href="@{/article/modify}" class="btn btn-primary" id="btnSubmit">등록</a>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- 내용 끝 -->
+</div>
+</html>
