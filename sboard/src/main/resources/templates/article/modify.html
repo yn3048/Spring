@@ -48,8 +48,8 @@
                 </div>
                 -->
                 <div class="text-end">      <!--param.cate 쓰는 이유: write에는 articleDTO가 뿌려진 적이 없기 때문-->
-                    <a th:href="@{/article/list(cate=${param.cate})}" class="btn btn-secondary">취소</a>
                     <a th:href="@{/article/modify}" class="btn btn-primary" id="btnSubmit">등록</a>
+                    <a th:href="@{/article/list(cate=${param.cate})}" class="btn btn-secondary">취소</a>
                 </div>
             </form>
 

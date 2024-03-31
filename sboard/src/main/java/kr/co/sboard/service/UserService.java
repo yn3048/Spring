@@ -36,24 +36,6 @@ public class UserService {
         return userMapper.selectCountUser(type, value);
     }
 
-    // 아이디 찾기
-   // public UserDTO selectUserForFindId(UserDTO userDTO){
-     //   return userMapper.selectUserForFindId(userDTO.getName(), userDTO.getEmail());
-   // }
-
-  /*  public String findUid(String name, String email){
-        UserDTO userDTO = new UserDTO();
-        userDTO.setName(name);
-        userDTO.setEmail(email);
-
-        // UserMapper를 사용하여 사용자 조회
-        UserDTO foundUser = userMapper.selectUserForFindId(userDTO);
-
-        if(foundUser != null) {
-
-        }
-    }*/
-
     public void insertUser(UserDTO userDTO){
         String encoded = passwordEncoder.encode(userDTO.getPass());
         userDTO.setPass(encoded);
@@ -61,6 +43,10 @@ public class UserService {
         userMapper.insertUser(userDTO);
     }
 
+    /*
+      - build.gradle 파일에 spring-boot-starter-mail 의존성 추가 할것
+      - application.yml 파일 spring email 설정 추가
+   */
     @Value("${spring.mail.username}")
     private String sender;
 
@@ -93,11 +79,5 @@ public class UserService {
         }
 
     }
-
-
-    public void selectUsers(){}
-    public void updateUser(){}
-    public void deleteUser(){}
-
 
 }

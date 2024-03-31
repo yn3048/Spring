@@ -134,9 +134,9 @@
                                                     </ol>
 
                                                     <textarea class="form-control" rows="3" readonly>${comment.content}</textarea>
-                                                    <div class="text-end mt-1">
-                                                        <button type="button" class="btn btn-warning btn-sm btnModify" data-mode="modify" data-no="${comment.no}">수정</button>
-                                                        <button type="button" class="btn btn-danger btn-sm btnRemove" data-mode="remove" data-no="${comment.no}">삭제</button>
+                                                    <div class="text-start mt-1">
+                                                        <button type="button" class="btn btn-primary btn-sm btnModify" data-mode="modify" data-no="${comment.no}">수정</button>
+                                                        <button type="button" class="btn btn-primary btn-sm btnRemove" data-mode="remove" data-no="${comment.no}">삭제</button>
                                                     </div>
                                                 </div>`;
 
@@ -188,9 +188,9 @@
                                                 </ol>
 
                                                 <textarea class="form-control" rows="3" readonly>${data.content}</textarea>
-                                                <div class="text-end mt-1">
-                                                    <button type="button" class="btn btn-warning btn-sm" data-no="${data.no}">수정</button>
-                                                    <button type="button" class="btn btn-danger btn-sm" data-no="${data.no}">삭제</button>
+                                                <div class="text-start mt-1">
+                                                    <button type="button" class="btn btn-primary btn-sm" data-no="${data.no}">수정</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" data-no="${data.no}">삭제</button>
                                                 </div>
                                             </div>`;
 
@@ -242,7 +242,7 @@
     <div class="text-end">
         <a th:href="@{/article/list(cate=${articleDTO.cate})}" class="btn btn-primary" id="btnSubmit">목록</a>
         <span th:if="${#authentication.principal.user.uid} == ${articleDTO.writer}">
-             <a th:href="@{/article/modify(no=${articleDTO.no}, cate=${articleDTO.cate})}" class="btn btn-warning" id="btnModify">수정</a>
+             <a th:href="@{/article/modify(no=${articleDTO.no}, cate=${articleDTO.cate})}" class="btn btn-secondary" id="btnModify">수정</a>
              <a th:href="@{/article/delete(no=${articleDTO.no}, cate=${articleDTO.cate})}" class="btn btn-danger" id="btnDelete">삭제</a>
         </span>
 
@@ -263,9 +263,9 @@
             </ol>
 
             <textarea class="form-control bg-secondary placeholder" rows="3" readonly></textarea>
-            <div class="text-end mt-1">
-                <button type="button" class="btn btn-warning btn-sm placeholder disabled col-1"></button>
-                <button type="button" class="btn btn-danger btn-sm placeholder disabled col-1"></button>
+            <div class="text-start mt-1">
+                <button type="button" class="btn btn-primary btn-sm placeholder disabled col-1"></button>
+                <button type="button" class="btn btn-primary btn-sm placeholder disabled col-1"></button>
             </div>
         </div>
 
@@ -283,8 +283,8 @@
         </div>
 
         <div class="mt-4 mb-4 text-end">
+            <input type="submit" class="btn btn-primary" value="등록"/>
             <button type="button" class="btn btn-secondary">취소</button>
-            <input type="submit" class="btn btn-primary" value="댓글등록"/>
         </div>
 
     </form>
