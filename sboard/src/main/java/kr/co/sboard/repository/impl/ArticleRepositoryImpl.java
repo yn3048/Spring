@@ -27,18 +27,18 @@ public class ArticleRepositoryImpl implements ArticleRepositoryCustom {
 
     private final JPAQueryFactory jpaQueryFactory;
     private QArticle qArticle = QArticle.article;
-    private QUser qUser = QUser.user;
+        private QUser qUser = QUser.user;
 
-    @Override
-    public Page<Tuple> selectArticles(PageRequestDTO pageRequestDTO, Pageable pageable) {
+        @Override
+        public Page<Tuple> selectArticles(PageRequestDTO pageRequestDTO, Pageable pageable) {
 
-        String cate = pageRequestDTO.getCate();
+            String cate = pageRequestDTO.getCate();
 
-        log.info("selectArticles...1-1 : " + cate);
+            log.info("selectArticles...1-1 : " + cate);
 
-        // 부가적인 Query 실행 정보를 처리하기 위해 fetchResults()로 실행
-        QueryResults<Tuple> results = jpaQueryFactory
-                                        .select(qArticle, qUser.nick)
+            // 부가적인 Query 실행 정보를 처리하기 위해 fetchResults()로 실행
+            QueryResults<Tuple> results = jpaQueryFactory
+                    .select(qArticle, qUser.nick)
                                         .from(qArticle)
                                         .where(qArticle.cate.eq(cate).and(qArticle.parent.eq(0)))
                                         .join(qUser)
